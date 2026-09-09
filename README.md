@@ -37,6 +37,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/HomeFitSupport.jsx`
 - `components/SalesPage.jsx`
 - `components/TestimonialsSection.jsx`
+- `components/UpsellPage.jsx`
 - `components/VideoSection.jsx`
 - `next.config.mjs`
 - `package.json`
@@ -44,6 +45,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `pages/homefit-es.js`
 - `pages/homefit.js`
 - `pages/index.js`
+- `pages/upsell.js`
 - `postcss.config.mjs`
 - `styles/globals.css`
 - `tailwind.config.js`
