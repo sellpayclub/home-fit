@@ -18,6 +18,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 ## Arquivos do projeto
 
 - `.gitignore`
+- `DOCUMENTO-HOMEFIT.txt`
 - `components/AccessSection.jsx`
 - `components/AudienceSection.jsx`
 - `components/CTAButton.jsx`

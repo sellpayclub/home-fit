@@ -1,0 +1,34 @@
+1. Construa em HTML, CSS e JavaScript PURO (vanilla). Sem React, sem JSX, sem 
+   TypeScript, sem build. Deve abrir direto num index.html no navegador.
+2. Organize em poucos arquivos: index.html, styles.css, script.js (e data.js se 
+   precisar separar conteúdo). Imagens na pasta assets ou com URLs https completas.
+3. TODOS os botões de compra/checkout devem ter no href EXATAMENTE: {{LINK_COMPRA}}
+   Exemplo: &lt;a href="{{LINK_COMPRA}}"&gt;COMPRAR AGORA&lt;/a&gt;
+   Nunca coloque um link real. Use sempre o marcador {{LINK_COMPRA}}, com grafia idêntica.
+4. Não deixe NENHUM outro link de checkout/compra fora desse marcador, em lugar 
+   nenhum (rodapé, pop-ups, menus). Só {{LINK_COMPRA}}.
+5. Ao final, liste em quais arquivos e linhas estão os botões de compra, para eu 
+   conferir que todos usam {{LINK_COMPRA}}.
+
+Agora, a página/quiz que quero criar é:
+[aqui você descreve o funil, o produto, o estilo, etc.]
+
+
+
+nos planos quando tiver mais de 1 preço:
+
+No HTML, em cada botão você usa o token do plano correspondente:
+&lt;a href="{{LINK_COMPRA_1}}"&gt;Comprar Básico&lt;/a&gt;
+&lt;a href="{{LINK_COMPRA_2}}"&gt;Comprar Pro&lt;/a&gt;
+&lt;a href="{{LINK_COMPRA_3}}"&gt;Comprar Premium&lt;/a&gt;
+preciso que voce me manda um unico codigo completo pra eu copiar aqui no chat, o codigo completo aqui na pagina, codigo UNICO.
+
+CONTRATO DE QUALIDADE DO PROJETO:
+- ESCOPO É CONTRATO: implemente somente o produto, as páginas e as funções solicitadas. Não acrescente telas, contas, perfis, dashboards, menus ou recursos por iniciativa própria.
+- FIDELIDADE É OBRIGATÓRIA: nomes, números, preços, links, títulos, listas, ordem de seções e textos fornecidos pelo usuário são requisitos. Não resuma, não parafraseie e não omita conteúdo sem pedido explícito.
+- FUNCIONALIDADE É OBRIGATÓRIA: todo CTA, botão, item de navegação, formulário e controle visível deve executar uma ação coerente. Links internos devem apontar para uma rota existente ou para uma âncora existente; nunca entregue botões decorativos.
+- Antes de concluir, confira silenciosamente o pedido item por item, todas as rotas citadas e todas as ações visíveis. Só confirme quando a versão estiver completa e navegável.
+- BACKEND DISPONÍVEL NÃO SIGNIFICA BACKEND SOLICITADO: não crie autenticação, perfil ou persistência se o briefing não exigir dados reais.
+- PROJETO EXISTENTE: a versão atual é a fonte de verdade. Continue dela e preserve tudo que não pertence ao pedido atual.
+
+CONTRATO DE EXECUÇÃO: esta chamada está no modo Construir. Não diga “vou ajustar”, não descreva um plano e não entregue apenas instruções. A sua primeira saída deve ser um bloco &lt;edit&gt; ou &lt;file&gt; válido que altere o projeto agora. Só depois dos blocos, escreva uma frase curta de confirmação.
