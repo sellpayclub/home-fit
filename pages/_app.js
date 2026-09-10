@@ -68,7 +68,6 @@ function TrackingPersistence() {
     };
 
     const currentParameters = [];
-    window.location.searchParams = undefined;
     new URLSearchParams(window.location.search).forEach((value, key) => {
       if (isTrackingParameter(key) && value.trim()) {
         currentParameters.push([key, value]);
