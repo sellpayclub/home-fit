@@ -37,6 +37,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/HomeFitSupport.jsx`
 - `components/SalesPage.jsx`
 - `components/TestimonialsSection.jsx`
+- `components/TrackingBridge.jsx`
 - `components/UpsellPage.jsx`
 - `components/VideoSection.jsx`
 - `next.config.mjs`

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCheckoutUrl } from "./CTAButton";
+import TrackingBridge from "./TrackingBridge";
 
 const VIDEO_URL = "https://play.tynk.ai/p/035750d1-2fc6-4f78-a389-9a48ab0a59f9";
 const ELASTIC_CHECKOUT_URL = "https://checkout.sellpay.com.br/c/kg9e";
@@ -28,6 +29,7 @@ export default function UpsellPage() {
 
   return (
     <main className="upsell-page">
+      <TrackingBridge />
       <section className="upsell">
         <div className="upsell__alert">
           Atenção: assista o vídeo abaixo para finalizar a compra

@@ -1,9 +1,7 @@
 import { useEffect } from "react";
-import Script from "next/script";
-import "../styles/globals.css";
 
-const TRACKING_STORAGE_KEY = "__codai_first_touch_tracking_v1";
-const TRACKING_VALIDITY_MS = 30 * 24 * 60 * 60 * 1000;
+const STORAGE_KEY = "__codai_first_touch_tracking_v1";
+const VALIDITY_MS = 30 * 24 * 60 * 60 * 1000;
 const TRACKING_KEYS = new Set([
   "fbclid",
   "gclid",
@@ -22,19 +20,19 @@ function isTrackingParameter(key) {
   return normalizedKey.startsWith("utm_") || TRACKING_KEYS.has(normalizedKey);
 }
 
-function TrackingPersistence() {
+export default function TrackingBridge() {
   useEffect(() => {
     const now = Date.now();
 
     const readPersistedParameters = () => {
       try {
-        const savedValue = window.localStorage.getItem(TRACKING_STORAGE_KEY);
+        const savedValue = window.localStorage.getItem(STORAGE_KEY);
         if (!savedValue) return {};
 
         const savedData = JSON.parse(savedValue);
-        const savedParameters = savedData && savedData.params ? savedData.params : {};
+        const savedParameters = savedData?.params || {};
         const validParameters = {};
-        let hasExpiredParameter = false;
+        let needsCleanup = false;
 
         Object.entries(savedParameters).forEach(([key, item]) => {
           if (
@@ -42,22 +40,22 @@ function TrackingPersistence() {
             typeof item.value === "string" &&
             item.value.trim() &&
             typeof item.timestamp === "number" &&
-            now - item.timestamp < TRACKING_VALIDITY_MS
+            now - item.timestamp < VALIDITY_MS
           ) {
             validParameters[key] = item;
           } else {
-            hasExpiredParameter = true;
+            needsCleanup = true;
           }
         });
 
-        if (hasExpiredParameter) {
+        if (needsCleanup) {
           if (Object.keys(validParameters).length) {
             window.localStorage.setItem(
-              TRACKING_STORAGE_KEY,
+              STORAGE_KEY,
               JSON.stringify({ params: validParameters })
             );
           } else {
-            window.localStorage.removeItem(TRACKING_STORAGE_KEY);
+            window.localStorage.removeItem(STORAGE_KEY);
           }
         }
 
@@ -68,7 +66,6 @@ function TrackingPersistence() {
     };
 
     const currentParameters = [];
-
     new URLSearchParams(window.location.search).forEach((value, key) => {
       if (isTrackingParameter(key) && value.trim()) {
         currentParameters.push([key, value]);
@@ -91,13 +88,13 @@ function TrackingPersistence() {
       if (hasNewParameter) {
         try {
           window.localStorage.setItem(
-            TRACKING_STORAGE_KEY,
+            STORAGE_KEY,
             JSON.stringify({ params: updatedParameters })
           );
-          persistedParameters = updatedParameters;
         } catch {
-          persistedParameters = updatedParameters;
+          // Mantém os parâmetros em memória caso o storage não esteja disponível.
         }
+        persistedParameters = updatedParameters;
       }
     }
 
@@ -117,7 +114,7 @@ function TrackingPersistence() {
       });
 
       Object.entries(persistedParameters).forEach(([key, item]) => {
-        if (!destination.searchParams.has(key) && item && item.value) {
+        if (!destination.searchParams.has(key) && item?.value) {
           destination.searchParams.set(key, item.value);
         }
       });
@@ -126,7 +123,7 @@ function TrackingPersistence() {
     };
 
     const refreshLink = (link) => {
-      if (!link || !link.getAttribute) return;
+      if (!link?.getAttribute) return;
 
       const originalHref =
         link.dataset.codaiTrackingSource || link.getAttribute("href");
@@ -151,13 +148,12 @@ function TrackingPersistence() {
       root.querySelectorAll?.("a[href]").forEach(refreshLink);
     };
 
-    refreshLinks();
-
     const handleCheckoutClick = (event) => {
       const link = event.target.closest?.("a[href]");
       if (link) refreshLink(link);
     };
 
+    refreshLinks();
     document.addEventListener("click", handleCheckoutClick, true);
 
     const observer = new MutationObserver((mutations) => {
@@ -168,7 +164,9 @@ function TrackingPersistence() {
         }
 
         mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === Node.ELEMENT_NODE) refreshLinks(node);
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            refreshLinks(node);
+          }
         });
       });
     });
@@ -187,29 +185,4 @@ function TrackingPersistence() {
   }, []);
 
   return null;
-}
-
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <TrackingPersistence />
-      <Component {...pageProps} />
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-18406188810"
-        strategy="afterInteractive"
-      />
-      <Script id="google-ads-tag" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-18406188810');
-        `}
-      </Script>
-      <Script
-        src="https://checkout.sellpay.com.br/utm-link-bridge.js"
-        strategy="afterInteractive"
-      />
-    </>
-  );
 }

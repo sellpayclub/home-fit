@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Check, ChevronDown, X } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { testimonials } from "./TestimonialsSection";
+import TrackingBridge from "./TrackingBridge";
 
 const MOCKUP_URL = "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/2acc8f8a-2804-400d-a949-6153e3af97c7.jpg";
 const PLANS_ANCHOR = "/homefit-es#homefit-es-planos";
@@ -229,6 +230,7 @@ export default function HomeFitSpanishPage() {
 
   return (
     <main className="homefit-page">
+      <TrackingBridge />
       <section className="homefit-hero">
         <div className="page-shell homefit-hero__layout">
           <div className="homefit-hero__copy">
