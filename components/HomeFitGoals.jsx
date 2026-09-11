@@ -5,8 +5,8 @@ const goals = [
   "🧘 Fazer Pilates",
   "🤸 Melhorar sua flexibilidade",
   "🏠 Fazer um treino completo em casa",
-  "Exercício de Fisioterapia",
-  "Acabar com Dores do Corpo",
+  "🩺 Exercício de Fisioterapia",
+  "💆 Acabar com Dores do Corpo",
 ];
 
 export default function HomeFitGoals() {
