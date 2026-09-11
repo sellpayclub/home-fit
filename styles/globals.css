@@ -1526,7 +1526,7 @@ main {
 
 .homefit-plan {
   position: relative;
-  padding: 28px 23px;
+  padding: 30px 25px;
   background: #fff;
   border: 2px solid var(--ink);
   box-shadow: 7px 7px 0 var(--green);
@@ -1539,13 +1539,17 @@ main {
 }
 
 .homefit-plan--complete .homefit-plan__price {
-  color: var(--white);
-  background: var(--ink);
-  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--green-soft);
+  border-color: var(--green);
 }
 
 .homefit-plan--complete .homefit-plan__price strong {
-  color: var(--white);
+  color: var(--green-dark);
+}
+
+.homefit-plan--complete .homefit-plan__price small {
+  color: var(--ink);
 }
 
 .homefit-plan h2 {
@@ -1555,22 +1559,21 @@ main {
 }
 
 .homefit-plan h3 {
-  min-height: 44px;
-  margin: 12px 0 22px;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.35;
+  margin: 12px 0 24px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.42;
 }
 
 .homefit-plan__badge {
-  margin: -28px -23px 20px;
-  padding: 10px;
+  margin: -30px -25px 22px;
+  padding: 12px;
   color: var(--white);
   background: var(--green);
   font-family: "Raleway", Arial, sans-serif;
-  font-size: .77rem;
+  font-size: 0.84rem;
   font-weight: 900;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 }
 
 .homefit-plan__plus {
@@ -1582,15 +1585,28 @@ main {
   display: grid;
   margin: 0;
   padding: 0;
-  gap: 9px;
+  gap: 12px;
   list-style: none;
   text-align: left;
 }
 
 .homefit-plan__list li {
   display: flex;
-  gap: 9px;
-  line-height: 1.4;
+  gap: 10px;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.homefit-plan__list .homefit-plan__lifetime {
+  padding: 13px;
+  align-items: center;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  border: 2px solid var(--green);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 900;
 }
 
 .homefit-plan__list svg {
@@ -1646,31 +1662,56 @@ main {
 
 .homefit-plan__price {
   display: grid;
-  margin: 0;
-  padding: 15px 12px 13px;
-  gap: 5px;
+  margin: 26px 0 0;
+  padding: 18px 14px 15px;
+  gap: 13px;
   color: var(--ink);
   background: var(--green-soft);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 2px solid var(--green);
   font-family: "Raleway", Arial, sans-serif;
-  font-size: 0.82rem;
-  line-height: 1.2;
   font-weight: 900;
-  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.homefit-plan__installment {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 9px;
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 .homefit-plan__price strong {
-  display: block;
+  display: inline-block;
   color: var(--green-dark);
-  font-size: clamp(2.35rem, 10vw, 3.25rem);
-  line-height: 0.95;
-  letter-spacing: -.065em;
+  font-size: clamp(2.8rem, 12vw, 3.8rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+
+.homefit-plan__price small {
+  display: block;
+  padding-top: 11px;
+  color: var(--ink);
+  border-top: 1px solid rgba(186, 7, 82, 0.24);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.homefit-plan__price small b {
+  color: var(--green-dark);
+  font-weight: 900;
 }
 
 .homefit-plan__note {
-  margin: 15px 0 22px;
-  color: var(--muted);
+  margin: 17px 0 24px;
+  color: var(--ink);
+  font-size: 1rem;
 }
 
 .homefit-audience ul {
@@ -1866,7 +1907,7 @@ main {
 
   .homefit-plans__grid {
     grid-template-columns: 1fr 1fr;
-    align-items: stretch;
+    align-items: start;
   }
 
   .homefit-plan {

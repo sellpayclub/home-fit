@@ -30,22 +30,7 @@ function PlanList({ items }) {
         const isLifetime = item === "Acesso vitalício";
 
         return (
-          <li
-            key={item}
-            style={
-              isLifetime
-                ? {
-                    padding: "12px",
-                    alignItems: "center",
-                    color: "#ba0752",
-                    background: "#fff0f6",
-                    border: "2px solid #ed1971",
-                    boxShadow: "3px 3px 0 #17111a",
-                    fontWeight: 900,
-                  }
-                : undefined
-            }
-          >
+          <li className={isLifetime ? "homefit-plan__lifetime" : ""} key={item}>
             <Check aria-hidden="true" size={17} strokeWidth={3} />
             {isLifetime ? <strong>{item}</strong> : item}
           </li>
@@ -71,8 +56,15 @@ export default function HomeFitPlans() {
             <h3>Para quem quer começar a treinar em casa</h3>
             <PlanList items={essentialItems} />
             <p className="homefit-plan__old">De R$49,90</p>
-            <p className="homefit-plan__price">POR APENAS <strong>R$19,90</strong></p>
-            <p className="homefit-plan__note">Pagamento único. Acesso imediato.</p>
+            <p className="homefit-plan__price">
+              <span className="homefit-plan__installment">
+                <span>10x</span>
+                <strong>R$ 9,90</strong>
+                <span>no cartão de crédito</span>
+              </span>
+              <small>ou <b>R$ 19,90</b> avista no PIX</small>
+            </p>
+            <p className="homefit-plan__note"><strong>Pagamento único. Acesso imediato.</strong></p>
             <CTAButton fullWidth onClick={() => setIsDiscountOpen(true)}>QUERO O PLANO BÁSICO</CTAButton>
           </article>
           <article className="homefit-plan homefit-plan--complete">
@@ -81,8 +73,15 @@ export default function HomeFitPlans() {
             <h3>Sua academia completa em casa</h3>
             <PlanList items={completeItems} />
             <p className="homefit-plan__old">De R$89,90</p>
-            <p className="homefit-plan__price">POR APENAS <strong>R$49,90</strong></p>
-            <p className="homefit-plan__note">Pagamento único. Acesso imediato.</p>
+            <p className="homefit-plan__price">
+              <span className="homefit-plan__installment">
+                <span>10x</span>
+                <strong>R$ 4,90</strong>
+                <span>no cartão de crédito</span>
+              </span>
+              <small>ou <b>R$ 49,90</b> avista no PIX</small>
+            </p>
+            <p className="homefit-plan__note"><strong>Pagamento único. Acesso imediato.</strong></p>
             <CTAButton fullWidth href="https://checkout.sellpay.com.br/c/i1vn">QUERO O PLANO COMPLETO</CTAButton>
           </article>
         </div>
