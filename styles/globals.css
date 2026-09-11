@@ -2369,8 +2369,7 @@ body {
 .quiz-primary-button:focus-visible,
 .quiz-option:focus-visible,
 .quiz-body-option:focus-visible,
-.quiz-input:focus-visible,
-.diagnosis-stories__controls button:focus-visible {
+.quiz-input:focus-visible {
   outline: 3px solid rgba(237, 25, 113, 0.38);
   outline-offset: 4px;
 }
@@ -2728,43 +2727,19 @@ body {
   text-align: center;
 }
 
-.diagnosis-stories__controls {
-  display: flex;
-  margin: 20px 0 12px;
-  justify-content: flex-end;
-  gap: 9px;
-}
-
-.diagnosis-stories__controls button {
+.diagnosis-stories__testimonials {
   display: grid;
-  width: 43px;
-  height: 43px;
-  place-items: center;
-  color: var(--white);
-  background: var(--ink);
-  border: 0;
-  border-radius: 3px;
-  cursor: pointer;
+  max-width: 510px;
+  margin: 25px auto 0;
+  gap: 20px;
 }
 
-.diagnosis-stories__track {
-  display: flex;
-  padding-bottom: 10px;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: var(--green) #f1dce6;
-}
-
-.diagnosis-stories__track img {
-  width: min(74vw, 285px);
-  flex: 0 0 min(74vw, 285px);
-  aspect-ratio: 1;
-  object-fit: cover;
+.diagnosis-stories__testimonials img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 4px 4px 0 var(--green);
-  scroll-snap-align: start;
 }
 
 .diagnosis-result__action {

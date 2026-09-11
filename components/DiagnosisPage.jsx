@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Check } from "lucide-react";
-import { testimonials } from "./TestimonialsSection";
+import { useEffect, useState } from "react";
+import { ChevronRight, Check } from "lucide-react";
 import TrackingBridge from "./TrackingBridge";
 
 const PROFILE_KEY = "__homefit_quiz_profile_v1";
@@ -27,7 +26,6 @@ export default function DiagnosisPage() {
   const [profile, setProfile] = useState(null);
   const [analysisStep, setAnalysisStep] = useState(0);
   const [isReady, setIsReady] = useState(false);
-  const carouselRef = useRef(null);
 
   useEffect(() => {
     try {
@@ -67,12 +65,6 @@ export default function DiagnosisPage() {
     return () => window.clearInterval(timer);
   }, [profile]);
 
-  const scrollCarousel = (direction) => {
-    carouselRef.current?.scrollBy({
-      left: direction * 280,
-      behavior: "smooth",
-    });
-  };
 
   if (!profile) {
     return (
@@ -196,30 +188,23 @@ export default function DiagnosisPage() {
 
             <section className="diagnosis-stories">
               <h2>Mulheres com um perfil parecido com o seu também começaram assim e tiveram resultados</h2>
-              <div className="diagnosis-stories__controls">
-                <button
-                  type="button"
-                  aria-label="Ver fotos anteriores"
-                  onClick={() => scrollCarousel(-1)}
-                >
-                  <ChevronLeft size={21} strokeWidth={2.5} />
-                </button>
-                <button
-                  type="button"
-                  aria-label="Ver próximas fotos"
-                  onClick={() => scrollCarousel(1)}
-                >
-                  <ChevronRight size={21} strokeWidth={2.5} />
-                </button>
-              </div>
-              <div className="diagnosis-stories__track" ref={carouselRef}>
-                {testimonials.map((testimonial) => (
-                  <img
-                    key={testimonial.src}
-                    src={testimonial.src}
-                    alt={testimonial.alt}
-                  />
-                ))}
+              <div className="diagnosis-stories__testimonials">
+                <img
+                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/a13f61e2-06e3-4c31-9424-3ee139f516e0.jpg"
+                  alt="Depoimento com antes e depois de aluna"
+                />
+                <img
+                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/aeca10e2-daaa-4f3e-8b73-afb9d2d66303.jpg"
+                  alt="Depoimento com transformação de aluna"
+                />
+                <img
+                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/328007fe-e78e-465d-9fa6-303dec4c3c9f.jpg"
+                  alt="Depoimento com antes e depois de aluna"
+                />
+                <img
+                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/ef43a139-4e05-4143-897e-2cd327a97154.png"
+                  alt="Depoimentos de alunas HomeFit"
+                />
               </div>
             </section>
 

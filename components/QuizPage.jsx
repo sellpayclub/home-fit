@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Check, ChevronRight } from "lucide-react";
 import TrackingBridge from "./TrackingBridge";
@@ -135,12 +135,7 @@ const questions = [
       "Outros",
     ],
   },
-  {
-    id: "intensity",
-    title: "Qual intensidade você deseja para começar?",
-    type: "single",
-    options: ["Leve", "Moderada", "Intensa"],
-  },
+
   {
     id: "name",
     title: "Qual seu NOME?",
@@ -157,6 +152,20 @@ export default function QuizPage() {
   const question = questions[step];
   const progress = ((step + 1) / questions.length) * 100;
 
+  useEffect(() => {
+    if (!Object.keys(answers).length) return;
+
+    try {
+      window.localStorage.setItem(
+        PROFILE_KEY,
+        JSON.stringify({
+          answers,
+          savedAt: Date.now(),
+        })
+      );
+    } catch {}
+  }, [answers]);
+
   const saveAndContinue = (nextAnswers) => {
     try {
       window.localStorage.setItem(
@@ -166,9 +175,7 @@ export default function QuizPage() {
           savedAt: Date.now(),
         })
       );
-    } catch {
-      return;
-    }
+    } catch {}
 
     router.push("/diagnostico");
   };
