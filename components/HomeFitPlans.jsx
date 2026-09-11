@@ -31,6 +31,7 @@ const completeItems = [
   "Atualizações mensais",
   "Grupo de alunas",
   "Acesso completo à plataforma",
+  "Acesso vitalício",
 ];
 
 function PlanList({ items }) {
