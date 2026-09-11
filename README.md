@@ -23,6 +23,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/AudienceSection.jsx`
 - `components/CTAButton.jsx`
 - `components/DevicesSection.jsx`
+- `components/DiagnosisPage.jsx`
 - `components/ExerciseVideoSection.jsx`
 - `components/FAQSection.jsx`
 - `components/HeroSection.jsx`
@@ -35,6 +36,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/HomeFitPlans.jsx`
 - `components/HomeFitSpanishPage.jsx`
 - `components/HomeFitSupport.jsx`
+- `components/QuizPage.jsx`
 - `components/SalesPage.jsx`
 - `components/TestimonialsSection.jsx`
 - `components/TrackingBridge.jsx`
@@ -43,9 +45,11 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `next.config.mjs`
 - `package.json`
 - `pages/_app.js`
+- `pages/diagnostico.js`
 - `pages/homefit-es.js`
 - `pages/homefit.js`
 - `pages/index.js`
+- `pages/quiz.js`
 - `pages/upsell.js`
 - `postcss.config.mjs`
 - `styles/globals.css`
