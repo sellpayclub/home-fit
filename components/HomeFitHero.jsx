@@ -36,6 +36,7 @@ export default function HomeFitHero() {
         <div className="narrow-shell">
           <div className="section-heading section-heading--center">
             <h2>Veja como funciona:</h2>
+            <p>Aparte o Play no Video Abaixo:</p>
           </div>
           <div className="homefit-video">
             <iframe

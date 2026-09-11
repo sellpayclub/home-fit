@@ -61,7 +61,7 @@ export default function HomeFitContent() {
           <p>
             Ao entrar no <strong>HomeFit</strong>, você recebe acesso a uma plataforma completa de exercícios para escolher o treino que quiser fazer naquele dia.
           </p>
-          <h3>Você recebe:</h3>
+          <h3 className="homefit-copy-block__receives">Você recebe:</h3>
           <ul className="homefit-check-list">
             {platformItems.map((item) => (
               <li key={item}><Check aria-hidden="true" size={18} strokeWidth={3} />{item}</li>

@@ -1266,6 +1266,11 @@ main {
   font-weight: 900;
 }
 
+.homefit-copy-block .homefit-copy-block__receives {
+  font-size: clamp(1.45rem, 6vw, 1.8rem);
+  font-weight: 900;
+}
+
 .homefit-copy-block p {
   margin: 0 0 15px;
   color: var(--muted);
@@ -1381,7 +1386,7 @@ main {
   display: flex;
   width: max-content;
   gap: 18px;
-  animation: testimonials-scroll 48s linear infinite;
+  animation: testimonials-scroll 22s linear infinite;
 }
 
 .homefit-community__track img {
