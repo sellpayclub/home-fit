@@ -3,32 +3,21 @@ import { Check, X } from "lucide-react";
 import CTAButton, { getCheckoutUrl } from "./CTAButton";
 
 const essentialItems = [
-  "Treinos em casa sem equipamentos",
-  "Pernas e glúteos",
-  "Abdômen",
-  "Braços e costas",
-  "Corpo inteiro",
-  "Mobilidade e alongamento",
-  "Acesso pelo celular",
+  "exercícios em casa",
+  "treinos básicos",
+  "acesso pelo celular",
 ];
 
-const basicUnavailableItems = [
-  "Pilates em casa",
-  "Yoga",
-  "Módulo completo ElasticFit",
-  "Treinos com faixas elásticas",
-  "Novos exercícios adicionados",
-  "Atualizações mensais",
-  "Grupo de alunas",
-];
 
 const completeItems = [
+  "Exercícios em casa",
   "Pilates em casa",
-  "Yoga",
-  "Módulo completo ElasticFit",
-  "Treinos com faixas elásticas",
-  "Novos exercícios adicionados",
-  "Atualizações mensais",
+  "Yoga em casa",
+  "Exercício com elastico",
+  "treino pernas e glúteos",
+  "treino para perder barriga",
+  "exercícios braços e costas",
+  "alongamento/mobilidade e fisioterapia",
   "Grupo de alunas",
   "Acesso completo à plataforma",
   "Acesso vitalício",
@@ -37,25 +26,35 @@ const completeItems = [
 function PlanList({ items }) {
   return (
     <ul className="homefit-plan__list">
-      {items.map((item) => (
-        <li key={item}><Check aria-hidden="true" size={17} strokeWidth={3} />{item}</li>
-      ))}
+      {items.map((item) => {
+        const isLifetime = item === "Acesso vitalício";
+
+        return (
+          <li
+            key={item}
+            style={
+              isLifetime
+                ? {
+                    padding: "12px",
+                    alignItems: "center",
+                    color: "#ba0752",
+                    background: "#fff0f6",
+                    border: "2px solid #ed1971",
+                    boxShadow: "3px 3px 0 #17111a",
+                    fontWeight: 900,
+                  }
+                : undefined
+            }
+          >
+            <Check aria-hidden="true" size={17} strokeWidth={3} />
+            {isLifetime ? <strong>{item}</strong> : item}
+          </li>
+        );
+      })}
     </ul>
   );
 }
 
-function UnavailableList({ items }) {
-  return (
-    <div className="homefit-plan__unavailable">
-      <p>Não inclui:</p>
-      <ul>
-        {items.map((item) => (
-          <li key={item}><X aria-hidden="true" size={16} strokeWidth={3} />{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 export default function HomeFitPlans() {
   const [isDiscountOpen, setIsDiscountOpen] = useState(false);
@@ -71,7 +70,6 @@ export default function HomeFitPlans() {
             <h2>PLANO BÁSICO</h2>
             <h3>Para quem quer começar a treinar em casa</h3>
             <PlanList items={essentialItems} />
-            <UnavailableList items={basicUnavailableItems} />
             <p className="homefit-plan__old">De R$49,90</p>
             <p className="homefit-plan__price">POR APENAS <strong>R$19,90</strong></p>
             <p className="homefit-plan__note">Pagamento único. Acesso imediato.</p>
@@ -81,10 +79,9 @@ export default function HomeFitPlans() {
             <p className="homefit-plan__badge">MAIS ESCOLHIDO</p>
             <h2>PLANO COMPLETO</h2>
             <h3>Sua academia completa em casa</h3>
-            <p className="homefit-plan__plus">Tudo do Plano Básico +</p>
             <PlanList items={completeItems} />
             <p className="homefit-plan__old">De R$89,90</p>
-            <p className="homefit-plan__price">POR APENAS <strong>R$29,90</strong></p>
+            <p className="homefit-plan__price">POR APENAS <strong>R$49,90</strong></p>
             <p className="homefit-plan__note">Pagamento único. Acesso imediato.</p>
             <CTAButton fullWidth href="https://checkout.sellpay.com.br/c/i1vn">QUERO O PLANO COMPLETO</CTAButton>
           </article>
@@ -115,7 +112,7 @@ export default function HomeFitPlans() {
               VOCÊ GANHOU 40% DESCONTO NO PLANO COMPLETO
             </h2>
             <p className="discount-modal__price">
-              por apenas <strong>R$ 24,90!</strong>
+              por apenas <strong>R$ 29,90!</strong>
             </p>
             <CTAButton
               fullWidth

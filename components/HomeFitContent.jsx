@@ -15,9 +15,44 @@ const platformItems = [
   "Acesso pelo celular, computador, tablet ou TV",
 ];
 
-const elasticItems = ["Pernas", "Glúteos", "Abdômen", "Braços", "Costas", "Corpo inteiro"];
+const moduleCovers = [
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/22854e06-e5d9-4d11-b95c-95f5267e3dfa.png",
+    alt: "Capa do módulo Treinos na Academia",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/3a86f62e-6698-4fac-bb9c-9339343d2664.png",
+    alt: "Capa do módulo Yoga",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/83e7fc18-6bea-4b38-91c2-b9c3b297045b.png",
+    alt: "Capa do módulo Pilates",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/030cccff-b270-4bee-8fa6-65a1ca05afac.png",
+    alt: "Capa do módulo Alongamento",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/7f1f8ec4-d867-49a7-92e4-d8ea0611d05e.png",
+    alt: "Capa do módulo Braços e Costas",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e6fe8bed-691c-4380-ac33-213ae7529883.png",
+    alt: "Capa do módulo Abdômen",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/d868b085-2a2e-4e57-8d9a-0358acd7f7da.png",
+    alt: "Capa do módulo ElasticFit",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/6d4a4dbb-8bdc-44d1-a7f8-a58bb806f989.png",
+    alt: "Capa do módulo Pernas e Glúteos",
+  },
+];
 
 export default function HomeFitContent() {
+  const moduleSlides = [...moduleCovers, ...moduleCovers];
+
   return (
     <section className="section homefit-content">
       <div className="page-shell">
@@ -35,28 +70,25 @@ export default function HomeFitContent() {
           <p className="homefit-highlight">Você escolhe o treino, aperta o play e começa.</p>
         </div>
 
-        <div className="homefit-equipment">
-          <div className="homefit-copy-block">
-            <h2>Não tem equipamento? Não tem problema.</h2>
-            <p>Você pode começar utilizando <strong>apenas o peso do próprio corpo</strong>.</p>
-            <p>Dentro do HomeFit existem diversos exercícios que não precisam de nenhum equipamento.</p>
-            <p>E, se quiser intensificar seus treinos depois, você também terá acesso ao módulo especial:</p>
-            <h2 className="homefit-equipment__title">ElasticFit</h2>
-            <p>Treinos completos utilizando faixas elásticas para trabalhar:</p>
-            <ul className="homefit-check-list homefit-check-list--compact">
-              {elasticItems.map((item) => (
-                <li key={item}><Check aria-hidden="true" size={18} strokeWidth={3} />{item}</li>
-              ))}
-            </ul>
-            <p>Você pode usar o elástico quando quiser — mas <strong>não precisa dele para começar</strong>.</p>
-          </div>
-          <div className="homefit-exercise-video">
-            <iframe
-              src="https://play.tynk.ai/p/d7785311-0121-482c-82ac-d8a38cb6e6c3"
-              title="Exercícios em casa HomeFit"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+        <div
+          className="homefit-community__slider"
+          aria-label="Capas dos módulos disponíveis no HomeFit"
+          style={{ marginTop: "46px" }}
+        >
+          <div className="homefit-community__track">
+            {moduleSlides.map((module, index) => (
+              <img
+                key={`${module.src}-${index}`}
+                src={module.src}
+                alt={index < moduleCovers.length ? module.alt : ""}
+                aria-hidden={index >= moduleCovers.length}
+                style={{
+                  aspectRatio: "1 / 1",
+                  objectFit: "contain",
+                  background: "#ffffff",
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>
