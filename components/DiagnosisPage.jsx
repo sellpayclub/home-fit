@@ -26,6 +26,7 @@ export default function DiagnosisPage() {
   const [profile, setProfile] = useState(null);
   const [analysisStep, setAnalysisStep] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [isContentUnlocked, setIsContentUnlocked] = useState(false);
 
   useEffect(() => {
     try {
@@ -65,6 +66,15 @@ export default function DiagnosisPage() {
     return () => window.clearInterval(timer);
   }, [profile]);
 
+  useEffect(() => {
+    if (!isReady) return undefined;
+
+    const timer = window.setTimeout(() => {
+      setIsContentUnlocked(true);
+    }, 4 * 60 * 1000);
+
+    return () => window.clearTimeout(timer);
+  }, [isReady]);
 
   if (!profile) {
     return (
@@ -141,79 +151,106 @@ export default function DiagnosisPage() {
               />
               <span>SEU PERFIL ESTÁ PRONTO</span>
               <h1>{name}, seu perfil HomeFit está pronto! 🎉</h1>
-              <p>
-                Com base nas suas respostas, identificamos o caminho mais adequado para você começar seus exercícios em casa.
+              <p className="diagnosis-result__video-title">
+                Veja como funciona o Método de Treino Metabólico HIIT que{" "}
+                <strong className="diagnosis-result__video-highlight">
+                  Queima MAIS gordura e calorias em 5 minutos
+                </strong>
+                , do que 1 hora de academia:
               </p>
+              <div className="diagnosis-result__video">
+                <iframe
+                  src="https://play.tynk.ai/p/62bc8700-bc7e-402b-86e8-ec5be8c2c20e"
+                  title="Método de Treino Metabólico HIIT"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </header>
 
-            <div className="diagnosis-summary">
-              <div>
-                <span>Seu objetivo principal</span>
-                <strong>{valueOrFallback(profile.goal, "Um pouco de tudo!")}</strong>
-              </div>
-              <div>
-                <span>Seu corpo hoje</span>
-                <strong>{valueOrFallback(profile.body, "Seu perfil personalizado")}</strong>
-              </div>
-              <div>
-                <span>Região que mais incomoda</span>
-                <strong>{valueOrFallback(profile.region, "Corpo inteiro")}</strong>
-              </div>
-              <div>
-                <span>Seu nível atual</span>
-                <strong>Iniciante</strong>
-              </div>
-              <div>
-                <span>Tempo disponível</span>
-                <strong>{valueOrFallback(profile.time, "No seu ritmo")}</strong>
-              </div>
-              <div>
-                <span>Cuidados importantes</span>
-                <strong>{care}</strong>
-              </div>
-            </div>
+            {isContentUnlocked && (
+              <div className="diagnosis-result__unlocked">
+                <div className="diagnosis-result__video-cta">
+                  <a className="quiz-primary-button" href="/homefit#homefit-planos">
+                    <span>VER MEU PLANO HOMEFIT</span>
+                    <ChevronRight aria-hidden="true" size={21} strokeWidth={3} />
+                  </a>
+                </div>
 
-            <div className="diagnosis-meaning">
-              <h2>O que isso significa para você</h2>
-              <p>Para o seu perfil, o ideal é começar com exercícios:</p>
-              <ul>
-                <li><Check aria-hidden="true" size={18} strokeWidth={3} />de baixo impacto;</li>
-                <li><Check aria-hidden="true" size={18} strokeWidth={3} />simples de acompanhar;</li>
-                <li><Check aria-hidden="true" size={18} strokeWidth={3} />que não exigem academia;</li>
-                <li><Check aria-hidden="true" size={18} strokeWidth={3} />adaptados ao seu nível;</li>
-                <li><Check aria-hidden="true" size={18} strokeWidth={3} />com foco no seu objetivo;</li>
-                <li><Check aria-hidden="true" size={18} strokeWidth={3} />feitos no seu ritmo.</li>
-              </ul>
-            </div>
+                <p className="diagnosis-result__description">
+                  Com base nas suas respostas, identificamos o caminho mais adequado para você começar seus exercícios em casa.
+                </p>
 
-            <section className="diagnosis-stories">
-              <h2>Mulheres com um perfil parecido com o seu também começaram assim e tiveram resultados</h2>
-              <div className="diagnosis-stories__testimonials">
-                <img
-                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/a13f61e2-06e3-4c31-9424-3ee139f516e0.jpg"
-                  alt="Depoimento com antes e depois de aluna"
-                />
-                <img
-                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/aeca10e2-daaa-4f3e-8b73-afb9d2d66303.jpg"
-                  alt="Depoimento com transformação de aluna"
-                />
-                <img
-                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/328007fe-e78e-465d-9fa6-303dec4c3c9f.jpg"
-                  alt="Depoimento com antes e depois de aluna"
-                />
-                <img
-                  src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/ef43a139-4e05-4143-897e-2cd327a97154.png"
-                  alt="Depoimentos de alunas HomeFit"
-                />
+                <div className="diagnosis-summary">
+                  <div>
+                    <span>Seu objetivo principal</span>
+                    <strong>{valueOrFallback(profile.goal, "Um pouco de tudo!")}</strong>
+                  </div>
+                  <div>
+                    <span>Seu corpo hoje</span>
+                    <strong>{valueOrFallback(profile.body, "Seu perfil personalizado")}</strong>
+                  </div>
+                  <div>
+                    <span>Região que mais incomoda</span>
+                    <strong>{valueOrFallback(profile.region, "Corpo inteiro")}</strong>
+                  </div>
+                  <div>
+                    <span>Seu nível atual</span>
+                    <strong>Iniciante</strong>
+                  </div>
+                  <div>
+                    <span>Tempo disponível</span>
+                    <strong>{valueOrFallback(profile.time, "No seu ritmo")}</strong>
+                  </div>
+                  <div>
+                    <span>Cuidados importantes</span>
+                    <strong>{care}</strong>
+                  </div>
+                </div>
+
+                <div className="diagnosis-meaning">
+                  <h2>O que isso significa para você</h2>
+                  <p>Para o seu perfil, o ideal é começar com exercícios:</p>
+                  <ul>
+                    <li><Check aria-hidden="true" size={18} strokeWidth={3} />de baixo impacto;</li>
+                    <li><Check aria-hidden="true" size={18} strokeWidth={3} />simples de acompanhar;</li>
+                    <li><Check aria-hidden="true" size={18} strokeWidth={3} />que não exigem academia;</li>
+                    <li><Check aria-hidden="true" size={18} strokeWidth={3} />adaptados ao seu nível;</li>
+                    <li><Check aria-hidden="true" size={18} strokeWidth={3} />com foco no seu objetivo;</li>
+                    <li><Check aria-hidden="true" size={18} strokeWidth={3} />feitos no seu ritmo.</li>
+                  </ul>
+                </div>
+
+                <section className="diagnosis-stories">
+                  <h2>Mulheres com um perfil parecido com o seu também começaram assim e tiveram resultados</h2>
+                  <div className="diagnosis-stories__testimonials">
+                    <img
+                      src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/a13f61e2-06e3-4c31-9424-3ee139f516e0.jpg"
+                      alt="Depoimento com antes e depois de aluna"
+                    />
+                    <img
+                      src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/aeca10e2-daaa-4f3e-8b73-afb9d2d66303.jpg"
+                      alt="Depoimento com transformação de aluna"
+                    />
+                    <img
+                      src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/328007fe-e78e-465d-9fa6-303dec4c3c9f.jpg"
+                      alt="Depoimento com antes e depois de aluna"
+                    />
+                    <img
+                      src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/ef43a139-4e05-4143-897e-2cd327a97154.png"
+                      alt="Depoimentos de alunas HomeFit"
+                    />
+                  </div>
+                </section>
+
+                <div className="diagnosis-result__action">
+                  <a className="quiz-primary-button" href="/homefit">
+                    <span>VER MEU PLANO HOMEFIT</span>
+                    <ChevronRight aria-hidden="true" size={21} strokeWidth={3} />
+                  </a>
+                </div>
               </div>
-            </section>
-
-            <div className="diagnosis-result__action">
-              <a className="quiz-primary-button" href="/homefit">
-                <span>VER MEU PLANO HOMEFIT</span>
-                <ChevronRight aria-hidden="true" size={21} strokeWidth={3} />
-              </a>
-            </div>
+            )}
           </div>
         </section>
       )}
