@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronRight, Check } from "lucide-react";
 import TrackingBridge from "./TrackingBridge";
+import { getCheckoutUrl } from "./CTAButton";
 
 const PROFILE_KEY = "__homefit_quiz_profile_v1";
 const PROFILE_VALIDITY_MS = 30 * 24 * 60 * 60 * 1000;
@@ -98,7 +99,13 @@ export default function DiagnosisPage() {
             <div className="quiz-intro__card">
               <h1>Vamos montar seu plano de exercícios em casa!</h1>
               <p>Responda as perguntas para preparar sua recomendação personalizada.</p>
-              <a className="quiz-primary-button" href="/quiz">
+              <a
+                className="quiz-primary-button"
+                href="/quiz"
+                onClick={(event) => {
+                  event.currentTarget.href = getCheckoutUrl(event.currentTarget.href);
+                }}
+              >
                 <span>COMEÇAR MEU PLANO</span>
                 <ChevronRight aria-hidden="true" size={21} strokeWidth={3} />
               </a>
@@ -171,7 +178,13 @@ export default function DiagnosisPage() {
             {isContentUnlocked && (
               <div className="diagnosis-result__unlocked">
                 <div className="diagnosis-result__video-cta">
-                  <a className="quiz-primary-button" href="/homefit#homefit-planos">
+                  <a
+                    className="quiz-primary-button"
+                    href="/homefit#homefit-planos"
+                    onClick={(event) => {
+                      event.currentTarget.href = getCheckoutUrl(event.currentTarget.href);
+                    }}
+                  >
                     <span>VER MEU PLANO HOMEFIT</span>
                     <ChevronRight aria-hidden="true" size={21} strokeWidth={3} />
                   </a>
@@ -244,7 +257,13 @@ export default function DiagnosisPage() {
                 </section>
 
                 <div className="diagnosis-result__action">
-                  <a className="quiz-primary-button" href="/homefit">
+                  <a
+                    className="quiz-primary-button"
+                    href="/homefit"
+                    onClick={(event) => {
+                      event.currentTarget.href = getCheckoutUrl(event.currentTarget.href);
+                    }}
+                  >
                     <span>VER MEU PLANO HOMEFIT</span>
                     <ChevronRight aria-hidden="true" size={21} strokeWidth={3} />
                   </a>

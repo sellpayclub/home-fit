@@ -28,9 +28,7 @@ export default function CTAButton({ children, fullWidth = false, href = PLANS_AN
     );
   }
 
-  const handleExternalCheckout = (event) => {
-    if (!isExternal) return;
-
+  const handleTrackedNavigation = (event) => {
     event.currentTarget.href = getCheckoutUrl(href);
   };
 
@@ -40,7 +38,7 @@ export default function CTAButton({ children, fullWidth = false, href = PLANS_AN
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      onClick={handleExternalCheckout}
+      onClick={handleTrackedNavigation}
     >
       <span>{children}</span>
       <ArrowRight aria-hidden="true" size={20} strokeWidth={2.5} />

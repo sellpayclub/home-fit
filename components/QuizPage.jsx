@@ -177,7 +177,10 @@ export default function QuizPage() {
       );
     } catch {}
 
-    router.push("/diagnostico");
+    router.push({
+      pathname: "/diagnostico",
+      query: Object.fromEntries(new URLSearchParams(window.location.search)),
+    });
   };
 
   const advance = () => {
