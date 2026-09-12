@@ -58,8 +58,8 @@ export default function HomeFitPlans() {
             <p className="homefit-plan__old">De R$49,90</p>
             <p className="homefit-plan__price">
               <span className="homefit-plan__installment">
-                <span>10x</span>
-                <strong>R$ 9,90</strong>
+                <span>3x</span>
+                <strong>R$ 6,63</strong>
                 <span>no cartão de crédito</span>
               </span>
               <small>ou <b>R$ 19,90</b> avista no PIX</small>
@@ -75,8 +75,8 @@ export default function HomeFitPlans() {
             <p className="homefit-plan__old">De R$89,90</p>
             <p className="homefit-plan__price">
               <span className="homefit-plan__installment">
-                <span>10x</span>
-                <strong>R$ 4,90</strong>
+                <span>6x</span>
+                <strong>R$ 8,30</strong>
                 <span>no cartão de crédito</span>
               </span>
               <small>ou <b>R$ 49,90</b> avista no PIX</small>
