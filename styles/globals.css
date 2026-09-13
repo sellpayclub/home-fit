@@ -1444,13 +1444,14 @@ main {
 
 .homefit-results-carousel .homefit-community__track {
   animation-direction: reverse;
+  animation-duration: 48s;
 }
 
 .homefit-community__track {
   display: flex;
   width: max-content;
   gap: 18px;
-  animation: testimonials-scroll 22s linear infinite;
+  animation: testimonials-scroll 48s linear infinite;
 }
 
 .homefit-community__track img {
