@@ -15,6 +15,11 @@ export const testimonials = [
   { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/c9e42f0a-1474-480e-b70f-272864e1d303.jpg", alt: "Aluna fazendo exercício de braços com faixa elástica roxa e celular com a plataforma" },
   { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/bd0d2726-5c17-4298-9543-c6c10791a2b6.jpg", alt: "Aluna treinando com elásticos laranja ao lado do celular com a plataforma Método ElasticFit" },
   { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/38b54606-1810-412d-857f-f5253bde0787.jpg", alt: "Aluna fazendo exercício no colchonete com faixa elástica rosa e celular com a plataforma" },
+  { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/82d7e7e9-b351-464a-8e7c-a2f785ff5859.jpg", alt: "Família treinando junto em casa" },
+  { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/40e0f00c-5077-403b-a3d8-23d8caad6e48.jpg", alt: "Gestante fazendo exercício em casa" },
+  { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/f39efc19-f2e4-4e25-b552-39df6f428fbd.jpg", alt: "Aluna treinando agachamento em casa com criança" },
+  { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/99e98972-aff0-4327-994a-98f81660dcfa.jpg", alt: "Aluna fazendo exercício em casa" },
+  { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e3ab2b07-bc8f-408a-9c24-e40b735ed231.jpg", alt: "Aluna fazendo agachamento em casa" },
 ];
 
 export default function TestimonialsSection() {

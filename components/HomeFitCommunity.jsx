@@ -26,6 +26,7 @@ const results = [
   { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/a6a180f3-1486-4b71-810a-b059f546a4ad.jpg", alt: "Resultado de aluna HomeFit com comparação de antes e depois" },
   { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/c5684ce6-9da4-478b-810d-8599801e8a6d.png", alt: "Resultado de aluna HomeFit" },
   { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/09c9656a-853e-4d62-b1b5-edd249f4e270.jpg", alt: "Resultado de aluna HomeFit" },
+  { src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e99c3890-bc93-4125-b801-3d9e7a3f4b1b.jpg", alt: "Resultado de aluna HomeFit com comparação de antes e depois" },
 ];
 
 export default function HomeFitCommunity() {
