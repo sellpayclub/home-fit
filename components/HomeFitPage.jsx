@@ -10,7 +10,7 @@ import TrackingBridge from "./TrackingBridge";
 
 export default function HomeFitPage() {
   return (
-    <main className="homefit-page">
+    <main className="homefit-page homefit-page--pt">
       <TrackingBridge />
       <HomeFitHero />
       <HomeFitContent />

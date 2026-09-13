@@ -13,8 +13,12 @@ export default function HomeFitHero() {
               src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e40e17e0-9321-4684-b1db-d62a86dddd1e.jpg"
               alt="Logo Método HomeFit"
             />
-            <h1>Sua Academia Completa em Casa por Apenas R$ 9,90</h1>
-            <h2>Treinos para o corpo inteiro + Pilates + Yoga + Alongamento + Exercícios com Elásticos</h2>
+            <h1>A Maior Plataforma de Exercícios pra quem quer manter uma rotina de treinos em casa!</h1>
+            <h2>
+              Participe do <span className="homefit-hero__challenge">Desafio "HomeFit Seca Você"</span> e{" "}
+              <span className="homefit-hero__result">Perca Até 5kg em 30 DIAS</span>{" "}
+              treinando apenas <span className="homefit-hero__time">8 minutos por Dia</span>
+            </h2>
             <div className="homefit-hero__mockup homefit-hero__mockup--mobile">
               <img src={MOCKUP_URL} alt="Plataforma de treinos HomeFit em dispositivos móveis" />
             </div>
