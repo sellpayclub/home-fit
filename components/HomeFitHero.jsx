@@ -13,7 +13,7 @@ export default function HomeFitHero() {
               src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e40e17e0-9321-4684-b1db-d62a86dddd1e.jpg"
               alt="Logo Método HomeFit"
             />
-            <h1>Sua Academia Completa em Casa!</h1>
+            <h1>Sua Academia Completa em Casa por Apenas R$ 9,90</h1>
             <h2>Treinos para o corpo inteiro + Pilates + Yoga + Alongamento + Exercícios com Elásticos</h2>
             <div className="homefit-hero__mockup homefit-hero__mockup--mobile">
               <img src={MOCKUP_URL} alt="Plataforma de treinos HomeFit em dispositivos móveis" />

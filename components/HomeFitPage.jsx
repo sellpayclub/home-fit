@@ -1,3 +1,4 @@
+import HomeFitBenefits from "./HomeFitBenefits";
 import HomeFitCommunity from "./HomeFitCommunity";
 import HomeFitContent from "./HomeFitContent";
 import HomeFitFAQ from "./HomeFitFAQ";
@@ -13,6 +14,7 @@ export default function HomeFitPage() {
       <TrackingBridge />
       <HomeFitHero />
       <HomeFitContent />
+      <HomeFitBenefits />
       <HomeFitGoals />
       <HomeFitCommunity />
       <HomeFitPlans />

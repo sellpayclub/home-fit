@@ -27,6 +27,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/ExerciseVideoSection.jsx`
 - `components/FAQSection.jsx`
 - `components/HeroSection.jsx`
+- `components/HomeFitBenefits.jsx`
 - `components/HomeFitCommunity.jsx`
 - `components/HomeFitContent.jsx`
 - `components/HomeFitFAQ.jsx`
