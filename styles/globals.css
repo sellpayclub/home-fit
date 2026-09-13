@@ -1921,6 +1921,313 @@ main {
   border-color: var(--ink);
 }
 
+/* Refinamentos de conversão HomeFit */
+.homefit-page {
+  background: #fffdfd;
+}
+
+.homefit-page .section {
+  position: relative;
+}
+
+.homefit-page .section-heading {
+  margin-bottom: 34px;
+}
+
+.homefit-page .section-heading h2 {
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.homefit-page .section-heading p {
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.homefit-hero {
+  padding-top: 42px;
+  background: #fff5f9;
+}
+
+.homefit-hero__logo {
+  width: min(100%, 300px);
+  margin-bottom: 28px;
+}
+
+.homefit-hero h1 {
+  max-width: 650px;
+  font-size: clamp(2.4rem, 11vw, 5.15rem);
+  line-height: 1.01;
+}
+
+.homefit-hero h2 {
+  max-width: 590px;
+  margin-top: 20px;
+  color: #9d164b;
+  line-height: 1.4;
+}
+
+.homefit-hero__copy > p {
+  max-width: 590px;
+  margin-top: 15px;
+}
+
+.homefit-hero__copy > p + p {
+  margin-top: 7px;
+}
+
+.homefit-hero__copy .cta-button {
+  min-width: min(100%, 285px);
+  margin-top: 30px;
+}
+
+.homefit-hero__mockup,
+.homefit-hero__mockup img {
+  border-radius: 10px;
+}
+
+.homefit-hero__mockup {
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--green);
+}
+
+.homefit-presentation {
+  background: var(--white);
+}
+
+.homefit-presentation .section-heading {
+  margin-bottom: 27px;
+}
+
+.homefit-presentation .centered-cta {
+  margin-top: 30px;
+}
+
+.homefit-content {
+  padding-top: 74px;
+}
+
+.homefit-copy-block h2 {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+.homefit-copy-block h3 {
+  margin-top: 31px;
+}
+
+.homefit-check-list {
+  gap: 13px;
+}
+
+.homefit-check-list li {
+  padding-bottom: 2px;
+}
+
+.homefit-highlight {
+  display: inline-block;
+  margin-top: 32px !important;
+  padding: 14px 17px;
+  background: var(--green-soft);
+  border-left: 4px solid var(--green);
+}
+
+.homefit-content .homefit-community__slider {
+  margin-top: 54px !important;
+  padding-block: 8px;
+}
+
+.homefit-content .homefit-community__track img {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 var(--green);
+}
+
+.homefit-benefits {
+  background: #fff8fb;
+}
+
+.homefit-benefits__grid {
+  border: 0;
+  gap: 14px;
+  background: transparent;
+}
+
+.homefit-benefits__item {
+  min-height: 0;
+  padding: 24px 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  box-shadow: 0 5px 0 rgba(237, 25, 113, 0.08);
+}
+
+.homefit-benefits__icon {
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+}
+
+.homefit-benefits__item h3 {
+  margin-top: 0;
+}
+
+.homefit-goals {
+  padding-block: 66px;
+}
+
+.homefit-goals .section-heading {
+  margin-bottom: 27px;
+}
+
+.homefit-goals__list {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.homefit-goals__list h3 {
+  padding: 17px 6px;
+}
+
+.homefit-community {
+  padding-top: 74px;
+  background: var(--white);
+}
+
+.homefit-community .section-heading {
+  margin-bottom: 34px;
+}
+
+.homefit-community__copy {
+  max-width: 620px;
+  margin-top: 43px;
+}
+
+.homefit-community__copy ul {
+  padding: 20px;
+  background: var(--green-pale);
+  border-left: 4px solid var(--green);
+}
+
+.homefit-plans {
+  padding-top: 74px;
+  padding-bottom: 78px;
+}
+
+.homefit-plans .section-heading {
+  margin-bottom: 40px;
+}
+
+.homefit-plan {
+  display: flex;
+  min-height: 100%;
+  padding: 31px 24px 28px;
+  flex-direction: column;
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--green);
+}
+
+.homefit-plan--complete {
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.homefit-plan h2 {
+  font-size: 1.55rem;
+}
+
+.homefit-plan h3 {
+  min-height: 3em;
+  margin-bottom: 27px;
+}
+
+.homefit-plan__list {
+  gap: 13px;
+}
+
+.homefit-plan__old {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.homefit-plan__price {
+  margin-top: 9px;
+  padding: 20px 14px 16px;
+}
+
+.homefit-plan__price strong {
+  font-size: clamp(3rem, 13vw, 4rem);
+}
+
+.homefit-plan__note {
+  margin: 18px 0 21px;
+}
+
+.homefit-plan .cta-button {
+  min-height: 62px;
+}
+
+.homefit-audience {
+  background: var(--white);
+}
+
+.homefit-audience li {
+  padding-block: 16px;
+}
+
+.homefit-anywhere {
+  padding-block: 72px;
+}
+
+.homefit-anywhere__steps {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.homefit-anywhere__promises {
+  max-width: 500px;
+  margin: 31px auto 0;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 5px 5px 0 var(--green);
+}
+
+.homefit-start {
+  padding-block: 74px;
+}
+
+.homefit-start .cta-button {
+  min-width: min(100%, 285px);
+  min-height: 62px;
+  margin-top: 24px;
+}
+
+.homefit-faq {
+  padding-top: 74px;
+}
+
+.homefit-faq__item button {
+  padding-block: 22px;
+}
+
+.homefit-faq__item button svg {
+  transition: transform 180ms ease;
+}
+
+.homefit-faq__item:has(p) button svg {
+  transform: rotate(180deg);
+}
+
+.homefit-final {
+  margin-top: 74px;
+  padding-block: 72px;
+}
+
+.homefit-final .cta-button {
+  min-width: min(100%, 285px);
+  min-height: 62px;
+}
+
 @media (min-width: 800px) {
   .homefit-hero {
     padding: 70px 0 82px;
@@ -1968,11 +2275,12 @@ main {
 
   .homefit-benefits__grid {
     grid-template-columns: 1fr 1fr;
+    gap: 18px;
   }
 
   .homefit-benefits__item {
-    min-height: 205px;
-    padding: 34px 32px;
+    min-height: 190px;
+    padding: 32px 30px;
   }
 
   .homefit-plans__grid {
