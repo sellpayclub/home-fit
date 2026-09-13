@@ -58,13 +58,11 @@ export default function HomeFitPlans() {
             <p className="homefit-plan__old">De R$49,90</p>
             <p className="homefit-plan__price">
               <span className="homefit-plan__installment">
-                <span>3x</span>
-                <strong>R$ 6,63</strong>
-                <span>no cartão de crédito</span>
+                <span>por apenas</span>
+                <strong>R$ 9,90</strong>
               </span>
-              <small>ou <b>R$ 19,90</b> avista no PIX</small>
+              <small>Pagamento único. Acesso imediato.</small>
             </p>
-            <p className="homefit-plan__note"><strong>Pagamento único. Acesso imediato.</strong></p>
             <CTAButton fullWidth onClick={() => setIsDiscountOpen(true)}>QUERO O PLANO BÁSICO</CTAButton>
           </article>
           <article className="homefit-plan homefit-plan--complete">
@@ -75,13 +73,11 @@ export default function HomeFitPlans() {
             <p className="homefit-plan__old">De R$89,90</p>
             <p className="homefit-plan__price">
               <span className="homefit-plan__installment">
-                <span>6x</span>
-                <strong>R$ 8,30</strong>
-                <span>no cartão de crédito</span>
+                <span>por apenas</span>
+                <strong>R$ 19,90</strong>
               </span>
-              <small>ou <b>R$ 49,90</b> avista no PIX</small>
+              <small>Pagamento único. Acesso imediato.</small>
             </p>
-            <p className="homefit-plan__note"><strong>Pagamento único. Acesso imediato.</strong></p>
             <CTAButton fullWidth href="https://checkout.sellpay.com.br/c/i1vn">QUERO O PLANO COMPLETO</CTAButton>
           </article>
         </div>
@@ -111,7 +107,7 @@ export default function HomeFitPlans() {
               VOCÊ GANHOU 40% DESCONTO NO PLANO COMPLETO
             </h2>
             <p className="discount-modal__price">
-              por apenas <strong>R$ 29,90!</strong>
+              por apenas <strong>R$ 15,00!</strong>
             </p>
             <CTAButton
               fullWidth

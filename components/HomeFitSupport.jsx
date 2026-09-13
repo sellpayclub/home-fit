@@ -55,7 +55,7 @@ export default function HomeFitSupport() {
           <h2>Você pode começar hoje</h2>
           <p>Assim que seu pagamento for confirmado, você recebe acesso ao HomeFit.</p>
           <p>Entre na plataforma e escolha seu primeiro treino.</p>
-          <h3>Acesso a partir de R$19,90</h3>
+          <h3>Acesso a partir de R$9,90</h3>
           <p><strong>Pagamento único.</strong></p>
           <CTAButton href="/homefit#homefit-planos">QUERO COMEÇAR AGORA</CTAButton>
         </div>
