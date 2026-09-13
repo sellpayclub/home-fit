@@ -1788,7 +1788,7 @@ main {
 
 .homefit-plan--single .homefit-plan__price small {
   padding-top: 14px;
-  font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+  font-size: clamp(1.45rem, 5.8vw, 1.7rem);
   font-weight: 900;
 }
 
@@ -3631,8 +3631,8 @@ body {
   }
 
   .homefit-page--pt .homefit-plan--single .homefit-plan__price small {
-    padding-top: 10px;
-    font-size: 1rem;
+    padding-top: 12px;
+    font-size: 1.28rem;
     line-height: 1.28;
   }
 
