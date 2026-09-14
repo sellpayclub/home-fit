@@ -3392,7 +3392,7 @@ body {
   }
 
   .homefit-page--pt .homefit-hero h1 {
-    font-size: clamp(2rem, 9vw, 2.5rem);
+    font-size: clamp(1.9rem, 8.5vw, 2.35rem);
     line-height: 1.07;
   }
 
@@ -3746,6 +3746,24 @@ body {
     min-height: 55px;
     margin-top: 17px;
   }
+
+  .homefit-page--pt .homefit-hero h1 {
+    font-size: clamp(1.52rem, 6.8vw, 1.88rem);
+  }
+
+  .homefit-page--pt .homefit-hero h2 {
+    font-size: 1.24rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .homefit-page--pt .homefit-hero h1 {
+    font-size: clamp(1.92rem, 8.8vw, 4.12rem);
+  }
+
+  .homefit-page--pt .homefit-hero h2 {
+    font-size: clamp(1.34rem, 6.24vw, 1.8rem);
+  }
 }
 
 /* Programas HomeFit */
@@ -3758,8 +3776,8 @@ body {
   overflow-y: hidden;
   padding-bottom: 8px;
   scrollbar-width: none;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
+  scroll-snap-type: x proximity;
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
