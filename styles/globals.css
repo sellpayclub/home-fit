@@ -3777,7 +3777,7 @@ body {
   padding-bottom: 8px;
   scrollbar-width: none;
   scroll-behavior: auto;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: none;
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
@@ -3790,7 +3790,8 @@ body {
   display: none;
 }
 
-.homefit-programs-slider:active {
+.homefit-programs-slider:active,
+.homefit-programs-slider.is-dragging {
   cursor: grabbing;
 }
 

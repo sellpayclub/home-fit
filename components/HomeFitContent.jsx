@@ -85,26 +85,36 @@ export default function HomeFitContent() {
     isHorizontal: null,
   });
 
-  const getLoopWidth = (carousel) => {
+  const getLoopMetrics = (carousel) => {
     const cards = carousel?.querySelectorAll(".homefit-program-card");
 
-    if (!cards || cards.length <= moduleCovers.length) return 0;
+    if (!cards || cards.length < moduleCovers.length * 3) return null;
 
-    return cards[moduleCovers.length].offsetLeft - cards[0].offsetLeft;
+    const middleSetStart = cards[moduleCovers.length].offsetLeft;
+    const finalSetStart = cards[moduleCovers.length * 2].offsetLeft;
+    const loopWidth = finalSetStart - middleSetStart;
+
+    if (!loopWidth) return null;
+
+    return {
+      start: middleSetStart,
+      end: finalSetStart,
+      width: loopWidth,
+    };
   };
 
   const normalizeLoop = (carousel) => {
-    const loopWidth = getLoopWidth(carousel);
+    const metrics = getLoopMetrics(carousel);
 
-    if (!carousel || !loopWidth) return 0;
+    if (!carousel || !metrics) return null;
 
-    if (carousel.scrollLeft >= loopWidth * 2) {
-      carousel.scrollLeft -= loopWidth;
-    } else if (carousel.scrollLeft <= 0) {
-      carousel.scrollLeft += loopWidth;
+    if (carousel.scrollLeft >= metrics.end) {
+      carousel.scrollLeft = metrics.start + (carousel.scrollLeft - metrics.end);
+    } else if (carousel.scrollLeft < metrics.start) {
+      carousel.scrollLeft = metrics.end - (metrics.start - carousel.scrollLeft);
     }
 
-    return loopWidth;
+    return metrics;
   };
 
   const moveCarousel = (direction) => {
@@ -117,20 +127,10 @@ export default function HomeFitContent() {
     const cardWidth = firstCard.getBoundingClientRect().width;
     const gap = Number.parseFloat(window.getComputedStyle(track).gap) || 18;
     const step = cardWidth + gap;
-    const loopWidth = normalizeLoop(carousel);
 
-    if (direction > 0 && carousel.scrollLeft + step >= loopWidth * 2) {
-      carousel.scrollLeft -= loopWidth;
-    }
-
-    if (direction < 0 && carousel.scrollLeft - step <= 0) {
-      carousel.scrollLeft += loopWidth;
-    }
-
-    carousel.scrollBy({
-      left: direction * step,
-      behavior: "smooth",
-    });
+    normalizeLoop(carousel);
+    carousel.scrollLeft += direction * step;
+    normalizeLoop(carousel);
   };
 
   useEffect(() => {
@@ -138,15 +138,14 @@ export default function HomeFitContent() {
     if (!carousel) return undefined;
 
     const centerCarousel = () => {
-      const loopWidth = getLoopWidth(carousel);
+      const metrics = getLoopMetrics(carousel);
 
-      if (loopWidth) {
-        carousel.scrollLeft = loopWidth;
+      if (metrics) {
+        carousel.scrollLeft = metrics.start;
       }
     };
 
-    centerCarousel();
-
+    const initialPositionFrame = window.requestAnimationFrame(centerCarousel);
     let animationFrame;
     let previousTimestamp;
 
@@ -155,9 +154,9 @@ export default function HomeFitContent() {
       previousTimestamp = timestamp;
 
       if (dragStateRef.current.pointerId === null) {
-        const loopWidth = normalizeLoop(carousel);
+        const metrics = normalizeLoop(carousel);
 
-        if (loopWidth) {
+        if (metrics) {
           carousel.scrollLeft += elapsed * 0.025;
           normalizeLoop(carousel);
         }
@@ -170,6 +169,7 @@ export default function HomeFitContent() {
     window.addEventListener("resize", centerCarousel);
 
     return () => {
+      window.cancelAnimationFrame(initialPositionFrame);
       window.cancelAnimationFrame(animationFrame);
       window.removeEventListener("resize", centerCarousel);
     };
@@ -181,6 +181,7 @@ export default function HomeFitContent() {
     const carousel = carouselRef.current;
     if (!carousel) return;
 
+    normalizeLoop(carousel);
     dragStateRef.current = {
       pointerId: event.pointerId,
       startX: event.clientX,
@@ -189,6 +190,7 @@ export default function HomeFitContent() {
       isHorizontal: null,
     };
 
+    carousel.classList.add("is-dragging");
     carousel.setPointerCapture?.(event.pointerId);
   };
 
@@ -207,6 +209,7 @@ export default function HomeFitContent() {
 
     if (dragState.isHorizontal) {
       carousel.scrollLeft = dragState.startScrollLeft - distanceX;
+      normalizeLoop(carousel);
       event.preventDefault();
     }
   };
@@ -216,6 +219,7 @@ export default function HomeFitContent() {
 
     if (dragStateRef.current.pointerId === event.pointerId) {
       carousel?.releasePointerCapture?.(event.pointerId);
+      carousel?.classList.remove("is-dragging");
       dragStateRef.current.pointerId = null;
       dragStateRef.current.isHorizontal = null;
       normalizeLoop(carousel);
