@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 const platformItems = [
   "Treinos completos em casa sem equipamentos",
@@ -77,59 +77,93 @@ const moduleCovers = [
 export default function HomeFitContent() {
   const moduleSlides = [...moduleCovers, ...moduleCovers];
   const carouselRef = useRef(null);
-  const draggingRef = useRef(false);
-  const hoveringRef = useRef(false);
-  const dragStartRef = useRef({ x: 0, scrollLeft: 0 });
+  const dragStateRef = useRef({
+    pointerId: null,
+    startX: 0,
+    startY: 0,
+    startScrollLeft: 0,
+    isHorizontal: null,
+  });
+
+  const moveCarousel = (direction) => {
+    const carousel = carouselRef.current;
+    const firstCard = carousel?.querySelector(".homefit-program-card");
+    const track = carousel?.querySelector(".homefit-community__track");
+
+    if (!carousel || !firstCard) return;
+
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap = Number.parseFloat(window.getComputedStyle(track).gap) || 18;
+    const halfTrackWidth = carousel.scrollWidth / 2;
+
+    if (direction > 0 && carousel.scrollLeft >= halfTrackWidth - cardWidth - gap) {
+      carousel.scrollLeft -= halfTrackWidth;
+    }
+
+    if (direction < 0 && carousel.scrollLeft <= cardWidth + gap) {
+      carousel.scrollLeft += halfTrackWidth;
+    }
+
+    carousel.scrollBy({
+      left: direction * (cardWidth + gap),
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return undefined;
-
-    let frameId;
-    let lastTimestamp;
-
-    const autoScroll = (timestamp) => {
-      if (lastTimestamp && !draggingRef.current && !hoveringRef.current) {
-        const elapsed = Math.min(timestamp - lastTimestamp, 48);
-        carousel.scrollLeft += elapsed * 0.08;
-
-        const loopPoint = carousel.scrollWidth / 2;
-        if (carousel.scrollLeft >= loopPoint) {
-          carousel.scrollLeft -= loopPoint;
-        }
+    const autoScroll = window.setInterval(() => {
+      if (dragStateRef.current.pointerId === null) {
+        moveCarousel(1);
       }
+    }, 4200);
 
-      lastTimestamp = timestamp;
-      frameId = window.requestAnimationFrame(autoScroll);
-    };
-
-    frameId = window.requestAnimationFrame(autoScroll);
-
-    return () => window.cancelAnimationFrame(frameId);
+    return () => window.clearInterval(autoScroll);
   }, []);
 
-  const handlePointerDown = (event) => {
+  const startDrag = (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+
     const carousel = carouselRef.current;
     if (!carousel) return;
 
-    draggingRef.current = true;
-    dragStartRef.current = {
-      x: event.clientX,
-      scrollLeft: carousel.scrollLeft,
+    dragStateRef.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startScrollLeft: carousel.scrollLeft,
+      isHorizontal: null,
     };
+
     carousel.setPointerCapture?.(event.pointerId);
   };
 
-  const handlePointerMove = (event) => {
+  const dragCarousel = (event) => {
     const carousel = carouselRef.current;
-    if (!carousel || !draggingRef.current) return;
+    const dragState = dragStateRef.current;
 
-    carousel.scrollLeft = dragStartRef.current.scrollLeft - (event.clientX - dragStartRef.current.x);
+    if (!carousel || dragState.pointerId !== event.pointerId) return;
+
+    const distanceX = event.clientX - dragState.startX;
+    const distanceY = event.clientY - dragState.startY;
+
+    if (dragState.isHorizontal === null && (Math.abs(distanceX) > 6 || Math.abs(distanceY) > 6)) {
+      dragState.isHorizontal = Math.abs(distanceX) > Math.abs(distanceY);
+    }
+
+    if (dragState.isHorizontal) {
+      carousel.scrollLeft = dragState.startScrollLeft - distanceX;
+      event.preventDefault();
+    }
   };
 
-  const finishDragging = (event) => {
-    draggingRef.current = false;
-    carouselRef.current?.releasePointerCapture?.(event.pointerId);
+  const finishDrag = (event) => {
+    const carousel = carouselRef.current;
+
+    if (dragStateRef.current.pointerId === event.pointerId) {
+      carousel?.releasePointerCapture?.(event.pointerId);
+      dragStateRef.current.pointerId = null;
+      dragStateRef.current.isHorizontal = null;
+    }
   };
 
   return (
@@ -153,44 +187,57 @@ export default function HomeFitContent() {
           <h2>Conheça alguns dos nossos programas</h2>
         </div>
 
-        <div
-          ref={carouselRef}
-          className="homefit-community__slider homefit-programs-slider"
-          aria-label="Capas dos programas disponíveis no HomeFit"
-          style={{ marginTop: "28px" }}
-          onPointerEnter={() => {
-            hoveringRef.current = true;
-          }}
-          onPointerLeave={() => {
-            hoveringRef.current = false;
-            draggingRef.current = false;
-          }}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={finishDragging}
-          onPointerCancel={finishDragging}
-        >
-          <div className="homefit-community__track">
-            {moduleSlides.map((module, index) => (
-              <article
-                className="homefit-program-card"
-                key={`${module.src}-${index}`}
-                aria-hidden={index >= moduleCovers.length}
-              >
-                <img
-                  className="homefit-program-card__cover"
-                  src={module.src}
-                  alt={index < moduleCovers.length ? module.alt : ""}
-                />
-                <div className="homefit-program-card__content">
-                  <h3>{module.title}</h3>
-                  {module.promise && (
-                    <p className="homefit-program-card__promise">{module.promise}</p>
-                  )}
-                  <p className="homefit-program-card__description">{module.description}</p>
-                </div>
-              </article>
-            ))}
+        <div className="homefit-programs-carousel" style={{ marginTop: "28px" }}>
+          <div
+            ref={carouselRef}
+            className="homefit-community__slider homefit-programs-slider"
+            aria-label="Capas dos programas disponíveis no HomeFit"
+            onPointerDown={startDrag}
+            onPointerMove={dragCarousel}
+            onPointerUp={finishDrag}
+            onPointerCancel={finishDrag}
+          >
+            <div className="homefit-community__track">
+              {moduleSlides.map((module, index) => (
+                <article
+                  className="homefit-program-card"
+                  key={`${module.src}-${index}`}
+                  aria-hidden={index >= moduleCovers.length}
+                >
+                  <img
+                    className="homefit-program-card__cover"
+                    src={module.src}
+                    alt={index < moduleCovers.length ? module.alt : ""}
+                  />
+                  <div className="homefit-program-card__content">
+                    <h3>{module.title}</h3>
+                    {module.promise && (
+                      <p className="homefit-program-card__promise">{module.promise}</p>
+                    )}
+                    <p className="homefit-program-card__description">{module.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="homefit-programs-carousel__controls">
+            <button
+              type="button"
+              className="homefit-programs-carousel__button"
+              onClick={() => moveCarousel(-1)}
+              aria-label="Ver programas anteriores"
+            >
+              <ChevronLeft aria-hidden="true" size={23} strokeWidth={3} />
+            </button>
+            <button
+              type="button"
+              className="homefit-programs-carousel__button"
+              onClick={() => moveCarousel(1)}
+              aria-label="Ver próximos programas"
+            >
+              <ChevronRight aria-hidden="true" size={23} strokeWidth={3} />
+            </button>
           </div>
         </div>
       </div>

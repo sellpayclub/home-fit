@@ -2040,14 +2040,16 @@ main {
   margin-top: 30px;
 }
 
-.homefit-hero__mockup,
-.homefit-hero__mockup img {
-  border-radius: 10px;
+.homefit-page--pt .homefit-hero__mockup,
+.homefit-page--pt .homefit-hero__mockup img {
+  border-radius: 0;
 }
 
-.homefit-hero__mockup {
-  border: 2px solid var(--ink);
-  box-shadow: 8px 8px 0 var(--green);
+.homefit-page--pt .homefit-hero__mockup {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .homefit-presentation {
@@ -2182,7 +2184,7 @@ main {
   min-height: 100%;
   padding: 31px 24px 28px;
   flex-direction: column;
-  border-radius: 0;
+  border-radius: 14px;
   box-shadow: 6px 6px 0 var(--green);
 }
 
@@ -2208,9 +2210,10 @@ main {
   padding-top: 28px;
 }
 
-.homefit-plan__price {
+.homefit-page--pt .homefit-plan__price {
   margin-top: 9px;
   padding: 20px 14px 16px;
+  border-radius: 10px;
 }
 
 .homefit-plan__price strong {
@@ -3746,13 +3749,23 @@ body {
 }
 
 /* Programas HomeFit */
+.homefit-programs-carousel {
+  width: 100%;
+}
+
 .homefit-programs-slider {
   overflow-x: auto;
   overflow-y: hidden;
-  cursor: grab;
+  padding-bottom: 8px;
   scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
   user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior-x: contain;
 }
 
 .homefit-programs-slider::-webkit-scrollbar {
@@ -3765,6 +3778,50 @@ body {
 
 .homefit-programs-slider .homefit-community__track {
   animation: none;
+}
+
+.homefit-program-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.homefit-programs-carousel__controls {
+  display: flex;
+  margin-top: 18px;
+  justify-content: center;
+  gap: 12px;
+}
+
+.homefit-programs-carousel__button {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  place-items: center;
+  color: var(--white);
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0 var(--green);
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.homefit-programs-carousel__button:hover {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: translate(-1px, -1px);
+}
+
+.homefit-programs-carousel__button:active {
+  box-shadow: 1px 1px 0 var(--ink);
+  transform: translate(2px, 2px);
+}
+
+.homefit-programs-carousel__button:focus-visible {
+  outline: 3px solid rgba(237, 25, 113, 0.38);
+  outline-offset: 4px;
 }
 
 .homefit-program-card {
