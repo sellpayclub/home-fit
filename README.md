@@ -42,6 +42,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/TestimonialsSection.jsx`
 - `components/TrackingBridge.jsx`
 - `components/UpsellPage.jsx`
+- `components/VSLPage.jsx`
 - `components/VideoSection.jsx`
 - `next.config.mjs`
 - `package.json`
@@ -52,6 +53,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `pages/index.js`
 - `pages/quiz.js`
 - `pages/upsell.js`
+- `pages/vsl.js`
 - `postcss.config.mjs`
 - `styles/globals.css`
 - `tailwind.config.js`
