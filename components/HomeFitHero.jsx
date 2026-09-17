@@ -57,7 +57,7 @@ export default function HomeFitHero() {
           <section className="hiit-explainer">
             <h2>Veja por que o método HIIT HomeFit funciona:</h2>
             <img
-              src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e32039e8-c31a-4dc3-a39a-fbbead659e06.jpg"
+              src="https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e6afc772-8d9b-4162-b983-e3da0fbd1fbf.jpg"
               alt="Gráfico do método HIIT HomeFit mostrando que a queima de gordura continua após o treino"
             />
           </section>
