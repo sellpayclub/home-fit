@@ -17,12 +17,9 @@ const platformItems = [
   "Clases de Yoga",
   "Movilidad y estiramiento",
   "Ejercicios para mejorar la flexibilidad",
-  "Entrenamientos con bandas elásticas",
   "Videos que muestran cada movimiento paso a paso",
   "Acceso desde el celular, computadora, tablet o TV",
 ];
-
-const elasticItems = ["Piernas", "Glúteos", "Abdomen", "Brazos", "Espalda", "Todo el cuerpo"];
 
 const goals = [
   "🍑 Trabajar piernas y glúteos",
@@ -40,31 +37,15 @@ const obstacles = [
   "depender de aparatos complicados",
 ];
 
-const essentialItems = [
+const completeItems = [
   "Entrenamientos en casa sin equipamiento",
   "Piernas y glúteos",
   "Abdomen",
   "Brazos y espalda",
   "Todo el cuerpo",
   "Movilidad y estiramiento",
-  "Acceso desde el celular",
-];
-
-const basicUnavailableItems = [
   "Pilates en casa",
   "Yoga",
-  "Módulo completo ElasticFit",
-  "Entrenamientos con bandas elásticas",
-  "Nuevos ejercicios añadidos",
-  "Actualizaciones mensuales",
-  "Grupo de alumnas",
-];
-
-const completeItems = [
-  "Pilates en casa",
-  "Yoga",
-  "Módulo completo ElasticFit",
-  "Entrenamientos con bandas elásticas",
   "Nuevos ejercicios añadidos",
   "Actualizaciones mensuales",
   "Grupo de alumnas",
@@ -86,67 +67,116 @@ const audience = [
 const currencies = {
   BRL: {
     label: "Real brasileño (R$)",
-    basic: "R$ 30,00",
     complete: "R$ 60,00",
-    discount: "R$ 36,00",
-    from: "R$ 30,00",
   },
   USD: {
     label: "Dólar estadounidense (US$)",
-    basic: "US$ 5",
     complete: "US$ 10",
-    discount: "US$ 6",
-    from: "US$ 5",
   },
   MXN: {
     label: "Peso mexicano (MX$)",
-    basic: "MX$ 100",
     complete: "MX$ 200",
-    discount: "MX$ 120",
-    from: "MX$ 100",
   },
   CLP: {
     label: "Peso chileno (CLP$)",
-    basic: "CLP$ 5.000",
     complete: "CLP$ 10.000",
-    discount: "CLP$ 6.000",
-    from: "CLP$ 5.000",
   },
   ARS: {
     label: "Peso argentino (ARS$)",
-    basic: "ARS$ 5.400",
     complete: "ARS$ 10.800",
-    discount: "ARS$ 6.480",
-    from: "ARS$ 5.400",
   },
   COP: {
     label: "Peso colombiano (COP$)",
-    basic: "COP$ 21.600",
     complete: "COP$ 43.200",
-    discount: "COP$ 25.920",
-    from: "COP$ 21.600",
   },
   PEN: {
     label: "Sol peruano (S/)",
-    basic: "S/ 18",
     complete: "S/ 36",
-    discount: "S/ 22",
-    from: "S/ 18",
   },
 };
 
 const paymentLinks = {
-  basic: {
-    card: "https://pay.kiwify.com/Pt9pbZi",
-    oxxo: "https://checkout.sellpay.com.br/c/8mst",
-    spei: "https://checkout.sellpay.com.br/c/nz5o",
-  },
   complete: {
     card: "https://pay.kiwify.com/uGqn0h3",
     oxxo: "https://checkout.sellpay.com.br/c/00vb",
     spei: "https://checkout.sellpay.com.br/c/t1x2",
   },
 };
+
+const results = [
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/097bebb5-8767-4fdd-b329-478465a05091.jpg",
+    alt: "Resultado de alumna HomeFit con comparación de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/af488165-d16c-4b75-a6be-a34f8dd2fb2e.jpg",
+    alt: "Resultado de alumna HomeFit con comparación de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/d4f8947b-6666-4de4-aa9c-1f67a7c1c261.jpg",
+    alt: "Resultado de alumna HomeFit con comparación de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/0ff7220f-4423-43f0-b87a-24762a91bb63.jpg",
+    alt: "Resultado de alumna HomeFit",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/1c2dc9cd-4396-4d26-8229-07ed857e1073.jpg",
+    alt: "Resultado de alumna HomeFit con comparación de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/256adba1-10c1-4753-8122-6182ee763de6.jpg",
+    alt: "Resultado de alumna HomeFit",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/7e359f3a-2901-4850-be1a-5b341d28d3b5.jpg",
+    alt: "Resultado de alumna HomeFit con comparación lateral de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/acdb37e5-3c45-4f1a-a941-fad46128f0c6.jpg",
+    alt: "Resultado de alumna HomeFit con transformación corporal",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/273afd66-2be3-4727-bb11-22497d3e6439.jpg",
+    alt: "Resultado de alumna HomeFit en el desafío de 30 días",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/a38aad9f-d3e5-4744-857b-793bbb64b4b2.jpg",
+    alt: "Resultado de alumna HomeFit con antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/d03065bb-64e4-4382-af6c-793c3a5bcb69.jpg",
+    alt: "Resultado de alumna HomeFit con transformación de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/6ea1bb4b-221f-406e-ad8e-1df570feb1b3.jpg",
+    alt: "Resultado de alumna HomeFit con cambio corporal",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/b7ad15c7-c63a-4ca1-92b1-051ec744dcb0.jpg",
+    alt: "Resultado de alumna HomeFit",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/b944f3d3-f938-4bfa-8e35-09c63d915ee5.jpg",
+    alt: "Resultado de alumna HomeFit después de dos meses",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/a6a180f3-1486-4b71-810a-b059f546a4ad.jpg",
+    alt: "Resultado de alumna HomeFit con comparación de antes y después",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/c5684ce6-9da4-478b-810d-8599801e8a6d.png",
+    alt: "Resultado de alumna HomeFit",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/09c9656a-853e-4d62-b1b5-edd249f4e270.jpg",
+    alt: "Resultado de alumna HomeFit",
+  },
+  {
+    src: "https://osnxfompwlwlfkuvncgs.supabase.co/storage/v1/object/public/project-assets/3464e6e8-17aa-481a-a30b-c7fdbac62d82/uploads/e99c3890-bc93-4125-b801-3d9e7a3f4b1b.jpg",
+    alt: "Resultado de alumna HomeFit con comparación de antes y después",
+  },
+];
 
 const questions = [
   {
@@ -160,10 +190,6 @@ const questions = [
   {
     question: "¿Necesito comprar equipamiento?",
     answer: "No. Hay diversos entrenamientos que utilizan solamente el peso de tu propio cuerpo.",
-  },
-  {
-    question: "¿Y los ejercicios con bandas elásticas?",
-    answer: "Están disponibles dentro del módulo ElasticFit, en el Plan Completo.",
   },
   {
     question: "¿Cómo recibo mi acceso?",
@@ -205,28 +231,13 @@ function PlanList({ items }) {
   );
 }
 
-function UnavailableList({ items }) {
-  return (
-    <div className="homefit-plan__unavailable">
-      <p>No incluye:</p>
-      <ul>
-        {items.map((item) => (
-          <li key={item}>
-            <X aria-hidden="true" size={16} strokeWidth={3} />
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export default function HomeFitSpanishPage() {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(0);
   const [currency, setCurrency] = useState("MXN");
   const selectedCurrency = currencies[currency];
   const slides = [...testimonials, ...testimonials];
+  const resultSlides = [...results, ...results];
 
   return (
     <main className="homefit-page">
@@ -241,8 +252,7 @@ export default function HomeFitSpanishPage() {
             />
             <h1>¡Tu gimnasio completo en casa!</h1>
             <h2>
-              Entrenamientos para todo el cuerpo + Pilates + Yoga + Estiramiento +
-              Ejercicios con bandas elásticas
+              Entrenamientos para todo el cuerpo + Pilates + Yoga + Estiramiento
             </h2>
             <div className="homefit-hero__mockup homefit-hero__mockup--mobile">
               <img
@@ -303,35 +313,6 @@ export default function HomeFitSpanishPage() {
               Eliges el entrenamiento, presionas play y comienzas.
             </p>
           </div>
-
-          <div className="homefit-equipment homefit-equipment--single">
-            <div className="homefit-copy-block">
-              <h2>¿No tienes equipamiento? No hay problema.</h2>
-              <p>
-                Puedes comenzar usando <strong>solamente el peso de tu propio cuerpo</strong>.
-              </p>
-              <p>
-                Dentro de HomeFit hay diversos ejercicios que no necesitan ningún
-                equipamiento.
-              </p>
-              <p>
-                Y, si quieres intensificar tus entrenamientos después, también tendrás
-                acceso al módulo especial:
-              </p>
-              <h2 className="homefit-equipment__title">ElasticFit</h2>
-              <p>
-                Entrenamientos completos utilizando bandas elásticas para trabajar:
-              </p>
-              <CheckList
-                items={elasticItems}
-                className="homefit-check-list homefit-check-list--compact"
-              />
-              <p>
-                Puedes usar las bandas elásticas cuando quieras — pero{" "}
-                <strong>no las necesitas para comenzar</strong>.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -358,6 +339,23 @@ export default function HomeFitSpanishPage() {
             <h2>Únete a miles de mujeres que eligieron entrenar en casa</h2>
           </div>
         </div>
+
+        <div
+          className="homefit-community__slider homefit-results-carousel"
+          aria-label="Resultados de las alumnas HomeFit"
+        >
+          <div className="homefit-community__track">
+            {resultSlides.map((result, index) => (
+              <img
+                key={`${result.src}-${index}`}
+                src={result.src}
+                alt={index < results.length ? result.alt : ""}
+                aria-hidden={index >= results.length}
+              />
+            ))}
+          </div>
+        </div>
+
         <div className="homefit-community__slider" aria-label="Fotos de alumnas entrenando">
           <div className="homefit-community__track">
             {slides.map((photo, index) => (
@@ -407,33 +405,18 @@ export default function HomeFitSpanishPage() {
           <div className="section-heading section-heading--center">
             <h2>Elige tu acceso</h2>
           </div>
-          <div className="homefit-plans__grid">
-            <article className="homefit-plan">
-              <h2>PLAN BÁSICO</h2>
-              <h3>Para quienes quieren empezar a entrenar en casa</h3>
-              <PlanList items={essentialItems} />
-              <UnavailableList items={basicUnavailableItems} />
-              <p className="homefit-plan__price">
-                POR SOLO <strong>{selectedCurrency.basic}</strong>
-              </p>
-              <p className="homefit-plan__note">Pago único. Acceso inmediato.</p>
-              <CTAButton fullWidth onClick={() => setSelectedPlan("basic")}>
-                QUIERO EL PLAN BÁSICO
-              </CTAButton>
-            </article>
-
-            <article className="homefit-plan homefit-plan--complete">
-              <p className="homefit-plan__badge">EL MÁS ELEGIDO</p>
-              <h2>PLAN COMPLETO</h2>
+          <div className="homefit-plans__grid homefit-plans__grid--single">
+            <article className="homefit-plan homefit-plan--complete homefit-plan--single">
+              <p className="homefit-plan__badge">ACCESO COMPLETO</p>
+              <h2>PLAN ÚNICO</h2>
               <h3>Tu gimnasio completo en casa</h3>
-              <p className="homefit-plan__plus">Todo lo del Plan Básico +</p>
               <PlanList items={completeItems} />
               <p className="homefit-plan__price">
                 POR SOLO <strong>{selectedCurrency.complete}</strong>
               </p>
               <p className="homefit-plan__note">Pago único. Acceso inmediato.</p>
               <CTAButton fullWidth onClick={() => setSelectedPlan("complete")}>
-                QUIERO EL PLAN COMPLETO
+                QUIERO MI ACCESO COMPLETO
               </CTAButton>
             </article>
           </div>
@@ -463,19 +446,19 @@ export default function HomeFitSpanishPage() {
               </button>
               <p className="discount-modal__eyebrow">ELIGE TU MÉTODO DE PAGO</p>
               <h2 id="homefit-es-payment-modal-title">
-                ¿Cómo quieres pagar tu {selectedPlan === "basic" ? "Plan Básico" : "Plan Completo"}?
+                ¿Cómo quieres pagar tu Plan Completo?
               </h2>
               <p className="discount-modal__price">
                 Selecciona una opción para continuar al pago.
               </p>
               <div className="homefit-payment-options">
-                <CTAButton fullWidth href={paymentLinks[selectedPlan].card}>
+                <CTAButton fullWidth href={paymentLinks.complete.card}>
                   TARJETA DE CRÉDITO
                 </CTAButton>
-                <CTAButton fullWidth href={paymentLinks[selectedPlan].oxxo}>
+                <CTAButton fullWidth href={paymentLinks.complete.oxxo}>
                   OXXO
                 </CTAButton>
-                <CTAButton fullWidth href={paymentLinks[selectedPlan].spei}>
+                <CTAButton fullWidth href={paymentLinks.complete.spei}>
                   SPEI — TRANSFERENCIA BANCARIA
                 </CTAButton>
               </div>
@@ -521,7 +504,7 @@ export default function HomeFitSpanishPage() {
             Tan pronto como se confirme tu pago, recibirás acceso a HomeFit.
           </p>
           <p>Entra a la plataforma y elige tu primer entrenamiento.</p>
-          <h3>Acceso desde {selectedCurrency.from}</h3>
+          <h3>Acceso por {selectedCurrency.complete}</h3>
           <p><strong>Pago único.</strong></p>
           <CTAButton href={PLANS_ANCHOR}>QUIERO EMPEZAR AHORA</CTAButton>
         </div>

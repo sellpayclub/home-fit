@@ -8,7 +8,7 @@ export default function HomeFitSpanish() {
         <title>HomeFit | Tu gimnasio completo en casa</title>
         <meta
           name="description"
-          content="Entrenamientos para todo el cuerpo, Pilates, Yoga, estiramiento y ejercicios con bandas elásticas."
+          content="Entrenamientos para todo el cuerpo, Pilates, Yoga, estiramiento y ejercicios para hacer en casa."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
