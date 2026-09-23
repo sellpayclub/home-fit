@@ -95,13 +95,6 @@ const currencies = {
   },
 };
 
-const paymentLinks = {
-  complete: {
-    card: "https://pay.kiwify.com/uGqn0h3",
-    oxxo: "https://checkout.sellpay.com.br/c/00vb",
-    spei: "https://checkout.sellpay.com.br/c/t1x2",
-  },
-};
 
 const results = [
   {
@@ -232,7 +225,6 @@ function PlanList({ items }) {
 }
 
 export default function HomeFitSpanishPage() {
-  const [selectedPlan, setSelectedPlan] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(0);
   const [currency, setCurrency] = useState("MXN");
   const selectedCurrency = currencies[currency];
@@ -415,7 +407,7 @@ export default function HomeFitSpanishPage() {
                 POR SOLO <strong>{selectedCurrency.complete}</strong>
               </p>
               <p className="homefit-plan__note">Pago único. Acceso inmediato.</p>
-              <CTAButton fullWidth onClick={() => setSelectedPlan("complete")}>
+              <CTAButton fullWidth href="https://checkout.sellpay.com.br/c/k905">
                 QUIERO MI ACCESO COMPLETO
               </CTAButton>
             </article>
@@ -425,46 +417,7 @@ export default function HomeFitSpanishPage() {
           </p>
         </div>
 
-        {selectedPlan && (
-          <div
-            className="discount-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="homefit-es-payment-modal-title"
-            onMouseDown={(event) => {
-              if (event.target === event.currentTarget) setSelectedPlan(null);
-            }}
-          >
-            <div className="discount-modal__content">
-              <button
-                type="button"
-                className="discount-modal__close"
-                onClick={() => setSelectedPlan(null)}
-                aria-label="Cerrar métodos de pago"
-              >
-                <X aria-hidden="true" size={22} strokeWidth={2.5} />
-              </button>
-              <p className="discount-modal__eyebrow">ELIGE TU MÉTODO DE PAGO</p>
-              <h2 id="homefit-es-payment-modal-title">
-                ¿Cómo quieres pagar tu Plan Completo?
-              </h2>
-              <p className="discount-modal__price">
-                Selecciona una opción para continuar al pago.
-              </p>
-              <div className="homefit-payment-options">
-                <CTAButton fullWidth href={paymentLinks.complete.card}>
-                  TARJETA DE CRÉDITO
-                </CTAButton>
-                <CTAButton fullWidth href={paymentLinks.complete.oxxo}>
-                  OXXO
-                </CTAButton>
-                <CTAButton fullWidth href={paymentLinks.complete.spei}>
-                  SPEI — TRANSFERENCIA BANCARIA
-                </CTAButton>
-              </div>
-            </div>
-          </div>
-        )}
+
       </section>
 
       <section className="section homefit-audience">
