@@ -2502,6 +2502,973 @@ body {
   }
 }
 
+/* Página HomeFit Dores */
+.dores-page {
+  background: #fffdfd;
+}
+
+.dores-hero {
+  background: #fff5f9;
+}
+
+.dores-hero .homefit-hero__copy > p {
+  max-width: 630px;
+}
+
+.dores-hero h1 {
+  max-width: 720px;
+}
+
+.dores-hero__areas {
+  display: grid;
+  max-width: 510px;
+  margin: 25px auto 0;
+  padding: 20px;
+  gap: 13px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  box-shadow: 5px 5px 0 rgba(237, 25, 113, 0.12);
+  text-align: left;
+}
+
+.dores-hero__areas strong {
+  color: var(--green-dark);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.dores-hero__areas .homefit-check-list {
+  gap: 8px;
+}
+
+.dores-day {
+  background: var(--white);
+}
+
+.dores-day__list {
+  display: grid;
+  gap: 12px;
+}
+
+.dores-day__list p {
+  margin: 0;
+  padding: 17px 18px;
+  color: var(--ink);
+  background: var(--green-pale);
+  border-left: 4px solid var(--green);
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+
+.dores-day__answer {
+  margin-top: 30px;
+  padding: 30px 20px;
+  color: var(--white);
+  background: var(--ink);
+  text-align: center;
+}
+
+.dores-day__answer h2,
+.dores-recovery h2 {
+  margin: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: clamp(1.65rem, 7vw, 2.45rem);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+}
+
+.dores-day__answer .cta-button {
+  margin-top: 22px;
+}
+
+.dores-recovery {
+  background: #fff8fb;
+  border-block: 1px solid var(--line);
+}
+
+.dores-recovery > .narrow-content {
+  text-align: center;
+}
+
+.dores-recovery__warning {
+  margin: 0 0 24px;
+  padding: 17px 18px;
+  color: var(--white);
+  background: var(--green-dark);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.03rem;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.dores-recovery h2 {
+  max-width: 670px;
+  margin-inline: auto;
+}
+
+.dores-recovery > .narrow-content > p:not(.dores-recovery__warning) {
+  max-width: 690px;
+  margin: 19px auto 0;
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.dores-recovery__points {
+  display: grid;
+  max-width: 650px;
+  margin: 30px auto 0;
+  gap: 10px;
+  text-align: left;
+}
+
+.dores-recovery__points p {
+  display: flex;
+  margin: 0;
+  padding: 15px 16px;
+  align-items: flex-start;
+  gap: 11px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.dores-recovery__points p:nth-child(-n + 3) svg {
+  flex: 0 0 auto;
+  color: #c72d46;
+}
+
+.dores-recovery__points p:last-child {
+  border-left: 4px solid var(--green);
+  font-weight: 800;
+}
+
+.dores-recovery__points p:last-child svg {
+  flex: 0 0 auto;
+  color: var(--green);
+}
+
+.dores-programs {
+  background: var(--white);
+}
+
+.dores-programs__grid {
+  display: grid;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 14px;
+}
+
+.dores-programs__item {
+  display: flex;
+  padding: 23px 20px;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff8fb;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+}
+
+.dores-programs__item > span {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  place-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 1.45rem;
+}
+
+.dores-programs__item h3 {
+  margin: 2px 0 7px;
+  color: var(--green-dark);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.dores-programs__item p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.48;
+}
+
+.dores-benefits {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.dores-benefits .section-kicker,
+.dores-benefits .section-heading h2 {
+  color: var(--white);
+}
+
+.dores-benefits .section-kicker {
+  padding: 7px 10px;
+  background: var(--green);
+}
+
+.dores-benefits__grid {
+  display: grid;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.dores-benefits__item {
+  display: flex;
+  min-height: 67px;
+  padding: 16px 17px;
+  align-items: center;
+  gap: 13px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.03rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.dores-benefits__item svg {
+  flex: 0 0 auto;
+  color: var(--green);
+}
+
+.dores-community {
+  padding-bottom: 74px;
+}
+
+.dores-community .section-heading p {
+  color: var(--ink);
+}
+
+.dores-final {
+  background: var(--green-dark);
+}
+
+@media (min-width: 800px) {
+  .dores-hero__areas {
+    margin-left: 0;
+  }
+
+  .dores-programs__grid,
+  .dores-benefits__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dores-programs__item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .dores-programs__item:last-child {
+    width: calc(50% - 7px);
+  }
+
+  .dores-benefits__item {
+    min-height: 75px;
+  }
+}
+
+@media (max-width: 799px) {
+  .dores-page .section {
+    padding: 44px 0;
+  }
+
+  .dores-page .homefit-hero {
+    padding: 29px 0 45px;
+  }
+
+  .dores-page .homefit-hero__logo {
+    width: min(100%, 238px);
+    margin-bottom: 20px;
+  }
+
+  .dores-page .homefit-hero h1 {
+    font-size: clamp(1.9rem, 8.6vw, 2.42rem);
+    line-height: 1.07;
+  }
+
+  .dores-page .homefit-hero__copy > p {
+    margin-top: 17px;
+    font-size: 1.03rem;
+    line-height: 1.56;
+  }
+
+  .dores-page .homefit-hero__mockup--mobile {
+    margin: 20px 0 5px;
+    padding: 8px;
+    box-shadow: 5px 5px 0 var(--green);
+  }
+
+  .dores-hero__areas {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .dores-hero .cta-button,
+  .dores-day__answer .cta-button,
+  .dores-page .homefit-final .cta-button {
+    width: 100%;
+    min-height: 55px;
+  }
+
+  .dores-day__list {
+    gap: 9px;
+  }
+
+  .dores-day__list p {
+    padding: 14px;
+    font-size: 0.98rem;
+    line-height: 1.48;
+  }
+
+  .dores-day__answer {
+    margin-top: 23px;
+    padding: 25px 16px;
+  }
+
+  .dores-day__answer h2,
+  .dores-recovery h2 {
+    font-size: 1.58rem;
+  }
+
+  .dores-recovery__warning {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 0.93rem;
+  }
+
+  .dores-recovery > .narrow-content > p:not(.dores-recovery__warning) {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .dores-recovery__points {
+    margin-top: 23px;
+    gap: 8px;
+  }
+
+  .dores-recovery__points p {
+    padding: 13px;
+    font-size: 0.94rem;
+  }
+
+  .dores-programs__grid {
+    gap: 10px;
+  }
+
+  .dores-programs__item {
+    padding: 18px 14px;
+    gap: 12px;
+  }
+
+  .dores-programs__item > span {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 1.2rem;
+  }
+
+  .dores-programs__item h3 {
+    font-size: 1rem;
+  }
+
+  .dores-programs__item p {
+    font-size: 0.93rem;
+    line-height: 1.42;
+  }
+
+  .dores-benefits__grid {
+    gap: 8px;
+  }
+
+  .dores-benefits__item {
+    min-height: 58px;
+    padding: 13px;
+    font-size: 0.94rem;
+  }
+
+  .dores-community {
+    padding-bottom: 45px;
+  }
+}
+
+/* Página Dores — conteúdo ampliado */
+.dores-page--expanded .homefit-hero__copy > p {
+  max-width: 650px;
+}
+
+.dores-page--expanded .homefit-hero__copy > p + p {
+  margin-top: 13px;
+}
+
+.dores-check-list {
+  display: grid;
+  margin: 22px 0;
+  padding: 0;
+  gap: 11px;
+  list-style: none;
+}
+
+.dores-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.dores-check-list svg {
+  flex: 0 0 auto;
+  margin-top: 5px;
+  color: var(--green);
+}
+
+.dores-story {
+  background: var(--white);
+}
+
+.dores-story__list,
+.dores-problem__list,
+.dores-gentle__list,
+.dores-method__steps,
+.dores-value__examples,
+.dores-spending__list {
+  display: grid;
+  gap: 10px;
+}
+
+.dores-story__list p,
+.dores-problem__list p,
+.dores-gentle__list p,
+.dores-method__steps p,
+.dores-value__examples p,
+.dores-spending__list p {
+  margin: 0;
+  padding: 16px 18px;
+  color: var(--ink);
+  background: var(--green-pale);
+  border-left: 4px solid var(--green);
+  line-height: 1.55;
+}
+
+.dores-story__transition {
+  margin: 32px 0 17px !important;
+  font-weight: 700;
+  text-align: center;
+}
+
+.dores-story__answer {
+  padding: 33px 24px;
+  color: var(--white);
+  background: var(--ink);
+  text-align: center;
+}
+
+.dores-story__answer h2,
+.dores-problem h3,
+.dores-method h3,
+.dores-gentle h3,
+.dores-sedentary h3,
+.dores-organized h3,
+.dores-value h3,
+.dores-guarantee h3 {
+  margin: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: clamp(1.38rem, 6vw, 2rem);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.dores-story__answer .cta-button {
+  margin-top: 22px;
+}
+
+.dores-problem {
+  background: #fff8fb;
+  border-block: 1px solid var(--line);
+}
+
+.dores-problem .narrow-content > p,
+.dores-method .narrow-content > p,
+.dores-gentle .narrow-content > p,
+.dores-sedentary .narrow-content > p,
+.dores-home .narrow-content > p,
+.dores-organized .narrow-content > p,
+.dores-value .narrow-content > p,
+.dores-spending .narrow-content > p,
+.dores-guarantee .narrow-content > p {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.64;
+}
+
+.dores-problem h3 {
+  margin: 27px 0 22px;
+  padding: 23px 20px;
+  color: var(--white);
+  background: var(--green-dark);
+  text-align: center;
+}
+
+.dores-method {
+  background: var(--white);
+}
+
+.dores-method__steps {
+  margin: 25px 0;
+}
+
+.dores-method h3 {
+  color: var(--green-dark);
+  text-align: center;
+}
+
+.dores-gentle {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.dores-gentle .section-heading h2,
+.dores-gentle .narrow-content > p,
+.dores-gentle h3 {
+  color: var(--white);
+}
+
+.dores-gentle__list p {
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-left: 4px solid var(--green);
+}
+
+.dores-gentle h3 {
+  margin-top: 27px;
+  text-align: center;
+}
+
+.dores-regions {
+  background: var(--white);
+}
+
+.dores-regions__grid {
+  display: grid;
+  max-width: 980px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.dores-region {
+  display: flex;
+  padding: 28px 24px;
+  align-items: flex-start;
+  gap: 18px;
+  background: #fff8fb;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green);
+}
+
+.dores-region__icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.dores-region h2 {
+  margin: 2px 0 10px;
+  color: var(--green-dark);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.dores-region p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.dores-region .dores-region__intro {
+  margin-top: 18px;
+  font-weight: 800;
+}
+
+.dores-region .dores-check-list {
+  margin: 13px 0 0;
+  gap: 7px;
+}
+
+.dores-region .dores-check-list li {
+  font-size: 0.98rem;
+}
+
+.dores-changes {
+  background: #fff8fb;
+  border-block: 1px solid var(--line);
+  text-align: center;
+}
+
+.dores-changes .narrow-content > p {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.08rem;
+}
+
+.dores-check-list--large {
+  max-width: 660px;
+  margin: 30px auto 0;
+  gap: 0;
+  text-align: left;
+  border-top: 1px solid var(--line);
+}
+
+.dores-check-list--large li {
+  padding: 15px 6px;
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  border-bottom: 1px solid var(--line);
+}
+
+.dores-sedentary {
+  color: var(--white);
+  background: var(--ink);
+  text-align: center;
+}
+
+.dores-sedentary .section-heading h2,
+.dores-sedentary .narrow-content > p,
+.dores-sedentary h3 {
+  color: var(--white);
+}
+
+.dores-sedentary h3 {
+  margin-top: 28px;
+  color: var(--green);
+}
+
+.dores-home {
+  padding-bottom: 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.dores-home__copy {
+  margin-bottom: 25px;
+}
+
+.dores-home__copy p {
+  margin: 0;
+  color: var(--green-dark);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.dores-home h3 {
+  margin: 27px 0 18px;
+  color: var(--green-dark);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.dores-home__times {
+  display: flex;
+  margin: 0 0 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dores-home__times span {
+  padding: 8px 12px;
+  color: var(--ink);
+  background: var(--green-soft);
+  border: 1px solid var(--line);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.dores-home__carousel {
+  margin-top: 45px;
+}
+
+.dores-organized {
+  background: #fff8fb;
+  border-block: 1px solid var(--line);
+}
+
+.dores-organized__questions {
+  display: grid;
+  margin: 24px 0;
+  gap: 9px;
+}
+
+.dores-organized__questions p {
+  margin: 0;
+  padding: 14px 16px;
+  color: var(--ink);
+  background: var(--white);
+  border-left: 4px solid var(--green);
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 800;
+}
+
+.dores-organized h3,
+.dores-value h3,
+.dores-guarantee h3 {
+  margin-top: 27px;
+  color: var(--green-dark);
+}
+
+.dores-access {
+  background: var(--white);
+}
+
+.dores-bonuses {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.dores-bonuses .section-heading h2 {
+  color: var(--white);
+}
+
+.dores-bonuses__grid {
+  display: grid;
+  max-width: 930px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.dores-bonus {
+  padding: 25px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 4px solid var(--green);
+}
+
+.dores-bonus h3 {
+  margin: 0 0 14px;
+  color: var(--white);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.dores-bonus p {
+  margin: 0 0 12px;
+  color: var(--white);
+  line-height: 1.56;
+}
+
+.dores-bonus p:last-child {
+  margin-bottom: 0;
+}
+
+.dores-value {
+  background: #fff8fb;
+  border-block: 1px solid var(--line);
+}
+
+.dores-value__examples,
+.dores-spending__list {
+  margin: 24px 0;
+}
+
+.dores-value h3 {
+  margin-bottom: 10px;
+}
+
+.dores-spending {
+  background: var(--white);
+}
+
+.dores-spending .narrow-content > p:last-child {
+  margin-top: 25px;
+  padding: 18px;
+  background: var(--green-pale);
+  border-left: 4px solid var(--green);
+}
+
+.dores-plans .homefit-plan__price > span:first-child {
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+
+.dores-plans .homefit-plan__note {
+  margin: 5px 0;
+}
+
+.dores-plans .homefit-plan__note + .homefit-plan__note + .homefit-plan__note {
+  margin-bottom: 23px;
+}
+
+.dores-guarantee {
+  background: #fff8fb;
+  border-block: 1px solid var(--line);
+  text-align: center;
+}
+
+.dores-guarantee h3 {
+  margin-bottom: 23px;
+}
+
+.dores-faq {
+  background: var(--white);
+}
+
+.dores-final {
+  margin-top: 0;
+}
+
+.dores-final h3 {
+  margin: 28px auto 20px;
+  color: var(--white);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.dores-final__price {
+  margin: 0 auto 24px !important;
+  padding: 13px 15px;
+  color: var(--ink) !important;
+  background: var(--white);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.04rem !important;
+  font-weight: 900;
+}
+
+@media (min-width: 800px) {
+  .dores-regions__grid,
+  .dores-bonuses__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dores-region:last-child,
+  .dores-bonus:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 799px) {
+  .dores-page--expanded .homefit-hero__copy > p {
+    font-size: 1.01rem;
+    line-height: 1.56;
+  }
+
+  .dores-page--expanded .dores-hero__areas {
+    text-align: left;
+  }
+
+  .dores-page--expanded .dores-check-list li {
+    font-size: 0.96rem;
+    line-height: 1.45;
+  }
+
+  .dores-story__list p,
+  .dores-problem__list p,
+  .dores-gentle__list p,
+  .dores-method__steps p,
+  .dores-value__examples p,
+  .dores-spending__list p {
+    padding: 13px;
+    font-size: 0.96rem;
+    line-height: 1.48;
+  }
+
+  .dores-story__answer {
+    padding: 25px 15px;
+  }
+
+  .dores-story__answer h2,
+  .dores-problem h3,
+  .dores-method h3,
+  .dores-gentle h3,
+  .dores-sedentary h3,
+  .dores-organized h3,
+  .dores-value h3,
+  .dores-guarantee h3 {
+    font-size: 1.35rem;
+  }
+
+  .dores-problem .narrow-content > p,
+  .dores-method .narrow-content > p,
+  .dores-gentle .narrow-content > p,
+  .dores-sedentary .narrow-content > p,
+  .dores-home .narrow-content > p,
+  .dores-organized .narrow-content > p,
+  .dores-value .narrow-content > p,
+  .dores-spending .narrow-content > p,
+  .dores-guarantee .narrow-content > p {
+    font-size: 1rem;
+    line-height: 1.56;
+  }
+
+  .dores-region {
+    padding: 19px 14px;
+    gap: 12px;
+  }
+
+  .dores-region__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 1.2rem;
+  }
+
+  .dores-region h2 {
+    font-size: 1.03rem;
+  }
+
+  .dores-region p {
+    font-size: 0.94rem;
+    line-height: 1.48;
+  }
+
+  .dores-check-list--large li {
+    font-size: 0.98rem;
+  }
+
+  .dores-bonus {
+    padding: 20px 16px;
+  }
+
+  .dores-bonus h3 {
+    font-size: 1rem;
+  }
+
+  .dores-bonus p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
 /* Upsell */
 .upsell-page {
   min-height: 100vh;

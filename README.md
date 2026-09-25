@@ -24,6 +24,8 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/CTAButton.jsx`
 - `components/DevicesSection.jsx`
 - `components/DiagnosisPage.jsx`
+- `components/DoresContent.jsx`
+- `components/DoresPage.jsx`
 - `components/ExerciseVideoSection.jsx`
 - `components/FAQSection.jsx`
 - `components/HeroSection.jsx`
@@ -46,6 +48,7 @@ Você pode publicar este projeto na Vercel, em qualquer hospedagem compatível c
 - `components/VideoSection.jsx`
 - `next.config.mjs`
 - `package.json`
+- `pages/Dores.js`
 - `pages/_app.js`
 - `pages/diagnostico.js`
 - `pages/homefit-es.js`
